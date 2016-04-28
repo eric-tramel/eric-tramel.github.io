@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
-<link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
-<link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-04-28T14:41:34+02:00</updated>
-<id>http://localhost:3000/</id>
+<link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" />
+<updated>2016-04-28T14:59:19+02:00</updated>
+<id>http://eric-tramel.github.io/</id>
 <title>Eric W. Tramel</title>
 <entry>
 <title>Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques</title>
-<link href="http://localhost:3000/tvg2016/" rel="alternate" type="text/html" title="Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques" />
+<link href="http://eric-tramel.github.io/tvg2016/" rel="alternate" type="text/html" title="Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques" />
 <published>2016-01-01T00:00:00+01:00</published>
 <updated>2016-01-01T00:00:00+01:00</updated>
-<id>http://localhost:3000/tvg2016</id>
-<content type="html" xml:base="http://localhost:3000/tvg2016/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/tvg2016</id>
+<content type="html" xml:base="http://eric-tramel.github.io/tvg2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari&lt;/h3&gt;
 &lt;a href=&quot;http://arxiv.org/abs/1409.5557&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://arxiv.org/pdf/1409.5557v1&quot;&gt;[PDF]&lt;/a&gt;
@@ -51,11 +51,11 @@ caption
 </entry>
 <entry>
 <title>Approximate Message Passing with Restricted Boltzmann Machine Priors</title>
-<link href="http://localhost:3000/tdk2016/" rel="alternate" type="text/html" title="Approximate Message Passing with Restricted Boltzmann Machine Priors" />
+<link href="http://eric-tramel.github.io/tdk2016/" rel="alternate" type="text/html" title="Approximate Message Passing with Restricted Boltzmann Machine Priors" />
 <published>2016-01-01T00:00:00+01:00</published>
 <updated>2016-01-01T00:00:00+01:00</updated>
-<id>http://localhost:3000/tdk2016</id>
-<content type="html" xml:base="http://localhost:3000/tdk2016/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/tdk2016</id>
+<content type="html" xml:base="http://eric-tramel.github.io/tdk2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Eric W. Tramel, Angélique Drémeau, and Florent Krzakala&lt;/h3&gt;
 &lt;a href=&quot;http://arxiv.org/abs/1502.06470&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://arxiv.org/pdf/1502.06470v3&quot;&gt;[PDF]&lt;/a&gt;
@@ -93,11 +93,11 @@ Visual comparison of reconstructions for four test digits across \(\alpha\) for 
 </entry>
 <entry>
 <title>Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System</title>
-<link href="http://localhost:3000/rtg2016/" rel="alternate" type="text/html" title="Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System" />
+<link href="http://eric-tramel.github.io/rtg2016/" rel="alternate" type="text/html" title="Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System" />
 <published>2016-01-01T00:00:00+01:00</published>
 <updated>2016-01-01T00:00:00+01:00</updated>
-<id>http://localhost:3000/rtg2016</id>
-<content type="html" xml:base="http://localhost:3000/rtg2016/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/rtg2016</id>
+<content type="html" xml:base="http://eric-tramel.github.io/rtg2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Boshra Rajaei, Eric W. Tramel, Sylvain Gigan, Florent Krzakala, &amp;amp; Laurent Daudet&lt;/h3&gt;
 &lt;a href=&quot;http://arxiv.org/abs/1510.01098&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://arxiv.org/pdf/1510.01098v2.pdf&quot;&gt;[PDF]&lt;/a&gt;
@@ -133,11 +133,11 @@ Visual comparison of reconstructions for four test digits across \(\alpha\) for 
 </entry>
 <entry>
 <title>Statistical Physics, Optimization, Inference, and Message-Passing Algorithms</title>
-<link href="http://localhost:3000/krz2016/" rel="alternate" type="text/html" title="Statistical Physics, Optimization, Inference, and Message-Passing Algorithms" />
+<link href="http://eric-tramel.github.io/krz2016/" rel="alternate" type="text/html" title="Statistical Physics, Optimization, Inference, and Message-Passing Algorithms" />
 <published>2016-01-01T00:00:00+01:00</published>
 <updated>2016-01-01T00:00:00+01:00</updated>
-<id>http://localhost:3000/krz2016</id>
-<content type="html" xml:base="http://localhost:3000/krz2016/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/krz2016</id>
+<content type="html" xml:base="http://eric-tramel.github.io/krz2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Florent Krzakala, Federico Ricci-Tersenghi, Lenka Zdeborová, Riccardo Zecchina, Eric W. Tramel, &amp;amp; Leticia F. Cugliandolo&lt;/h3&gt;
 &lt;a href=&quot;https://global.oup.com/academic/product/statistical-physics-optimization-inference-and-message-passing-algorithms-9780198743736?cc=fr&amp;amp;lang=en&amp;amp;&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://www.lps.ens.fr/~krzakala/LESHOUCHES2013/book.htm&quot;&gt;[Chapter PDFs]&lt;/a&gt;
@@ -173,11 +173,11 @@ caption
 </entry>
 <entry>
 <title>Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging</title>
-<link href="http://localhost:3000/btk2015/" rel="alternate" type="text/html" title="Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging" />
+<link href="http://eric-tramel.github.io/btk2015/" rel="alternate" type="text/html" title="Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging" />
 <published>2015-12-15T00:00:00+01:00</published>
 <updated>2015-12-15T00:00:00+01:00</updated>
-<id>http://localhost:3000/btk2015</id>
-<content type="html" xml:base="http://localhost:3000/btk2015/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/btk2015</id>
+<content type="html" xml:base="http://eric-tramel.github.io/btk2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Jean Barbier, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
 &lt;a href=&quot;http://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013/pdf&quot;&gt;[PDF]&lt;/a&gt;
@@ -212,11 +212,11 @@ caption
 </entry>
 <entry>
 <title>Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy</title>
-<link href="http://localhost:3000/gtk2015/" rel="alternate" type="text/html" title="Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy" />
+<link href="http://eric-tramel.github.io/gtk2015/" rel="alternate" type="text/html" title="Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy" />
 <published>2015-12-01T00:00:00+01:00</published>
 <updated>2015-12-01T00:00:00+01:00</updated>
-<id>http://localhost:3000/gtk2015</id>
-<content type="html" xml:base="http://localhost:3000/gtk2015/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/gtk2015</id>
+<content type="html" xml:base="http://eric-tramel.github.io/gtk2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Marylou Gabrié, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
 &lt;a href=&quot;http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy.pdf&quot;&gt;[PDF]&lt;/a&gt;
@@ -251,11 +251,11 @@ caption
 </entry>
 <entry>
 <title>Sparse Estimation with the Swept Approximated Message-Passing Algorithm</title>
-<link href="http://localhost:3000/mkt2015/" rel="alternate" type="text/html" title="Sparse Estimation with the Swept Approximated Message-Passing Algorithm" />
+<link href="http://eric-tramel.github.io/mkt2015/" rel="alternate" type="text/html" title="Sparse Estimation with the Swept Approximated Message-Passing Algorithm" />
 <published>2015-07-07T00:00:00+02:00</published>
 <updated>2015-07-07T00:00:00+02:00</updated>
-<id>http://localhost:3000/mkt2015</id>
-<content type="html" xml:base="http://localhost:3000/mkt2015/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/mkt2015</id>
+<content type="html" xml:base="http://eric-tramel.github.io/mkt2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Andre Manoel, Eric W. Tramel, Florent Krzakala, &amp;amp; Lenka Zdeborová&lt;/h3&gt;
 &lt;a href=&quot;http://machinelearning.wustl.edu/mlpapers/papers/icml2015_manoel15&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;http://machinelearning.wustl.edu/mlpapers/paper_files/icml2015_manoel15.pdf&quot;&gt;[PDF]&lt;/a&gt;
@@ -296,11 +296,11 @@ SwAMP are compared for CS signal reconstruction for correlated sensing matrices 
 </entry>
 <entry>
 <title>Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators</title>
-<link href="http://localhost:3000/mtt2015/" rel="alternate" type="text/html" title="Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators" />
+<link href="http://eric-tramel.github.io/mtt2015/" rel="alternate" type="text/html" title="Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators" />
 <published>2015-01-01T00:00:00+01:00</published>
 <updated>2015-01-01T00:00:00+01:00</updated>
-<id>http://localhost:3000/mtt2015</id>
-<content type="html" xml:base="http://localhost:3000/mtt2015/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/mtt2015</id>
+<content type="html" xml:base="http://eric-tramel.github.io/mtt2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel&lt;/h3&gt;
 &lt;a href=&quot;http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&amp;amp;Sect2=HITOFF&amp;amp;p=1&amp;amp;u=/netahtml/PTO/search-bool.html&amp;amp;r=1&amp;amp;f=G&amp;amp;l=50&amp;amp;d=PALL&amp;amp;RefSrch=yes&amp;amp;Query=PN/9160900&quot;&gt;[Link]&lt;/a&gt;
 &lt;!-- &lt;a href=&quot;http://&quot;&gt;[PDF]&lt;/a&gt; --&gt;
@@ -340,11 +340,11 @@ caption
 </entry>
 <entry>
 <title>Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction</title>
-<link href="http://localhost:3000/ttf2014/" rel="alternate" type="text/html" title="Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction" />
+<link href="http://eric-tramel.github.io/ttf2014/" rel="alternate" type="text/html" title="Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction" />
 <published>2014-09-01T00:00:00+02:00</published>
 <updated>2014-09-01T00:00:00+02:00</updated>
-<id>http://localhost:3000/ttf2014</id>
-<content type="html" xml:base="http://localhost:3000/ttf2014/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/ttf2014</id>
+<content type="html" xml:base="http://eric-tramel.github.io/ttf2014/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Maria Trocan, Eric W. Tramel, James E. Fowler, &amp;amp; Beatrice Pesquet-Popescu&lt;/h3&gt;
 &lt;a href=&quot;http://link.springer.com/article/10.1007/s11042-012-1330-7&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;/assets/doc/ttf2014.pdf&quot;&gt;[PDF]&lt;/a&gt;
@@ -379,11 +379,11 @@ The multistage DC-CS reconstruction framework using ME/MC and DE/DC for multivie
 </entry>
 <entry>
 <title>Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification</title>
-<link href="http://localhost:3000/clt2014b/" rel="alternate" type="text/html" title="Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification" />
+<link href="http://eric-tramel.github.io/clt2014b/" rel="alternate" type="text/html" title="Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification" />
 <published>2014-09-01T00:00:00+02:00</published>
 <updated>2014-09-01T00:00:00+02:00</updated>
-<id>http://localhost:3000/clt2014b</id>
-<content type="html" xml:base="http://localhost:3000/clt2014b/">&lt;div align=&quot;center&quot;&gt;
+<id>http://eric-tramel.github.io/clt2014b</id>
+<content type="html" xml:base="http://eric-tramel.github.io/clt2014b/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Chen Chen, Wei Li, Eric W. Tramel, Minshan Cui, Saurabh Prasad, &amp;amp; James E. Fowler&lt;/h3&gt;
 &lt;a href=&quot;http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;amp;arnumber=6705590&amp;amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6705590&quot;&gt;[Link]&lt;/a&gt;
 &lt;a href=&quot;/assets/doc/clt2014b.pdf&quot;&gt;[PDF]&lt;/a&gt;
