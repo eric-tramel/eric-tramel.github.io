@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
+<link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://localhost:3000/" rel="alternate" type="text/html" />
+<updated>2016-04-28T14:41:34+02:00</updated>
+<id>http://localhost:3000/</id>
+<title>Eric W. Tramel</title>
+<entry>
+<title>Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques</title>
+<link href="http://localhost:3000/tvg2016/" rel="alternate" type="text/html" title="Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques" />
+<published>2016-01-01T00:00:00+01:00</published>
+<updated>2016-01-01T00:00:00+01:00</updated>
+<id>http://localhost:3000/tvg2016</id>
+<content type="html" xml:base="http://localhost:3000/tvg2016/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari&lt;/h3&gt;
+&lt;a href=&quot;http://arxiv.org/abs/1409.5557&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://arxiv.org/pdf/1409.5557v1&quot;&gt;[PDF]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;br /&gt;
+&lt;!-- &lt;figcaption class=&quot;caption&quot;&gt;
+caption
+&lt;/figcaption&gt; --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; These notes review six lectures given by Prof. Andrea Montanari on the topic of statistical estimation for linear models. The first two lectures cover the principles of signal recovery from linear measurements in terms of minimax risk. Subsequent lectures demonstrate the application of these principles to several practical problems in science and engineering. Specifically, these topics include denoising of error-laden signals, recovery of compressively sensed signals, reconstruction of low-rank matrices, and also the discovery of hidden cliques within large networks.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;incollection{tvg2014,
+    Author = {Eric W. Tramel and Santhosh Kumar and Andrei Giurgiu and Andrea Montanari},
+    Booktitle = {Statistical Physics, Optimization, Inference, and Message-Passing Algorithms},
+    Editor = {Florent Krzakala and Federico Ricci-Tersenghi and Lenka Zdeborov\`{a} and Riccardo Zecchina and Eric W. Tramel and Leticia F. Cugliandolo},
+    Pages = {120--177},
+    Publisher = {Oxford University Press},
+    Title = {Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques},
+    Year = {2015}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="inference" />
+<category term="statistical physics" />
+<category term="machine learning" />
+<category term="belief propagation" />
+<category term="message passing" />
+<summary>Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari[Link][PDF]</summary>
+</entry>
+<entry>
+<title>Approximate Message Passing with Restricted Boltzmann Machine Priors</title>
+<link href="http://localhost:3000/tdk2016/" rel="alternate" type="text/html" title="Approximate Message Passing with Restricted Boltzmann Machine Priors" />
+<published>2016-01-01T00:00:00+01:00</published>
+<updated>2016-01-01T00:00:00+01:00</updated>
+<id>http://localhost:3000/tdk2016</id>
+<content type="html" xml:base="http://localhost:3000/tdk2016/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Eric W. Tramel, Angélique Drémeau, and Florent Krzakala&lt;/h3&gt;
+&lt;a href=&quot;http://arxiv.org/abs/1502.06470&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://arxiv.org/pdf/1502.06470v3&quot;&gt;[PDF]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;
+Visual comparison of reconstructions for four test digits across \(\alpha\) for the same experimental settings. The rows of each box, from top to bottom, correspond to the reconstructions providied by i.i.d. AMP-GB, non-i.i.d. AMP-GB, the proposed approach with NMF RBM factorization, and the proposed approach with TAP RBM factorization, respectively. The columns of each box, from left to right, represent the values \(\alpha = 0.025, 0.074, 0.123, 0.172, 0.222, 0.271, 0.320, 0.369, 0.418, 0.467\). The advantages provided by the proposed approach are clearly seen by comparing the last row to the first one. The digits shown have \(\rho = 0.342\) (top left), \(\rho = 0.268\) (bottom left), \(\rho = 0.214\) (top right), and \(\rho = 0.162\) (bottom right). The vertical blue line represents the \(\alpha = \rho\) oracle exact-reconstruction boundary for each reconstruction task.
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Approximate Message Passing (AMP) has been shown to be an excellent statistical approach to signal inference and compressed sensing problem. The AMP framework provides modularity in the choice of signal prior; here we propose a hierarchical form of the Gauss-Bernouilli prior which utilizes a Restricted Boltzmann Machine (RBM) trained on the signal support to push reconstruction performance beyond that of simple iid priors for signals whose support can be well represented by a trained binary RBM. We present and analyze two methods of RBM factorization and demonstrate how these affect signal reconstruction performance within our proposed algorithm. Finally, using the MNIST handwritten digit dataset, we show experimentally that using an RBM allows AMP to approach oracle-support performance.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{tdk2016,
+    Author = {Eric W. Tramel and Ang{\&#39;e}lique Dr{\&#39;e}meau and Florent Krzakala},
+    Journal = {Journal of Statistical Mechanics: Theory and Experiment},
+    Title = {Approximate Message Passing with Restricted {B}oltzmann Machine Priors},
+    Year = {2016}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="inverse problems" />
+<category term="boltzmann machines" />
+<category term="unsupervised learning" />
+<category term="inference" />
+<category term="approximate message passing" />
+<category term="machine learning" />
+<summary>Eric W. Tramel, Angélique Drémeau, and Florent Krzakala[Link][PDF]</summary>
+</entry>
+<entry>
+<title>Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System</title>
+<link href="http://localhost:3000/rtg2016/" rel="alternate" type="text/html" title="Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System" />
+<published>2016-01-01T00:00:00+01:00</published>
+<updated>2016-01-01T00:00:00+01:00</updated>
+<id>http://localhost:3000/rtg2016</id>
+<content type="html" xml:base="http://localhost:3000/rtg2016/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Boshra Rajaei, Eric W. Tramel, Sylvain Gigan, Florent Krzakala, &amp;amp; Laurent Daudet&lt;/h3&gt;
+&lt;a href=&quot;http://arxiv.org/abs/1510.01098&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://arxiv.org/pdf/1510.01098v2.pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;Experimental setup of the imager, from [9]. A monochromatic laser at 532 nm is expanded by a telescope and illuminates an SLM, here, a Texas Instruments DLP9500 DMD with \(1920\times 1080\) pixels. The light beam carrying the image is then focused on a random medium by means of a microscope lens. Here, the medium is a thick (several tens of microns) opaque layer of Zinc Oxide nanoparticles deposited on a glass slide. The transmitted light is collected on the far side by a second lens, passes through a polarizer, and is detected by an AVT PIKE F-100 monochrome CCD camera. Note that the DMD is only for calibration and display and is not part of the imager itself.
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Reconstruction of images from noisy linear measurements is a core problem in image processing, for which convex optimization methods based on total variation (TV) minimization have been the long-standing state-of-the-art. We present an alternative probabilistic reconstruction procedure based on approximate message-passing, Scampi, which operates in the compressive regime, where the inverse imaging problem is underdetermined. While the proposed method is related to the recently proposed GrAMPA algorithm of Borgerding, Schniter, and Rangan, we further develop the probabilistic approach to compressive imaging by introducing an expectation-maximization learning of model parameters, making the Scampi robust to model uncertainties. Additionally, our numerical experiments indicate that Scampi can provide reconstruction performance superior to both GrAMPA as well as convex approaches to TV reconstruction. Finally, through exhaustive best-case experiments, we show that in many cases the maximal performance of both Scampi and convex TV can be quite close, even though the approaches are a prori distinct. The theoretical reasons for this correspondence remain an open question. Nevertheless, the proposed algorithm remains more practical, as it requires far less parameter tuning to perform optimally.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conference{btg2016,
+    Author = {Boshra Rajaei and Eric W. Tramel and Sylvain Gigan and Florent Krzakala and Laurent Daudet},
+    Booktitle = {Proc. {IEEE} Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)},
+    Title = {Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System},
+    Year = {2016}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="imaging" />
+<category term="phase retrieval" />
+<category term="approximate message passing" />
+<category term="optics" />
+<category term="physical experiment" />
+<summary>Boshra Rajaei, Eric W. Tramel, Sylvain Gigan, Florent Krzakala, &amp;amp; Laurent Daudet[Link][PDF]</summary>
+</entry>
+<entry>
+<title>Statistical Physics, Optimization, Inference, and Message-Passing Algorithms</title>
+<link href="http://localhost:3000/krz2016/" rel="alternate" type="text/html" title="Statistical Physics, Optimization, Inference, and Message-Passing Algorithms" />
+<published>2016-01-01T00:00:00+01:00</published>
+<updated>2016-01-01T00:00:00+01:00</updated>
+<id>http://localhost:3000/krz2016</id>
+<content type="html" xml:base="http://localhost:3000/krz2016/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Florent Krzakala, Federico Ricci-Tersenghi, Lenka Zdeborová, Riccardo Zecchina, Eric W. Tramel, &amp;amp; Leticia F. Cugliandolo&lt;/h3&gt;
+&lt;a href=&quot;https://global.oup.com/academic/product/statistical-physics-optimization-inference-and-message-passing-algorithms-9780198743736?cc=fr&amp;amp;lang=en&amp;amp;&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://www.lps.ens.fr/~krzakala/LESHOUCHES2013/book.htm&quot;&gt;[Chapter PDFs]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;br /&gt;
+&lt;!-- &lt;figcaption class=&quot;caption&quot;&gt;
+caption
+&lt;/figcaption&gt; --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; In the last decade, there have been an increasing convergence of interest and methods between theoretical physics and fields as diverse as probability, machine learning, optimization and compressed sensing. In particular, many theoretical and applied works in statistical physics and computer science have relied on the use of message passing algorithms and their connection to statistical physics of spin glasses. The aim of this book, especially adapted to PhD students, post-docs, and young researchers, is to present the background necessary for entering this fast developing field.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;book{krz2016,
+    Author = {Florent Krzakala and Federico Ricci-Tersenghi and Lenka Zdeborov\`{a} and Riccardo Zecchina and Eric W. Tramel and Leticia F. Cugliandolo},
+    Publisher = {Oxford University Press},
+    Title = {Statistical Physics, Optimization, Inference, and Message-Passing Algorithms},
+    Year = {2016}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="inference" />
+<category term="statistical physics" />
+<category term="machine learning" />
+<category term="belief propagation" />
+<category term="optimization" />
+<summary>Florent Krzakala, Federico Ricci-Tersenghi, Lenka Zdeborová, Riccardo Zecchina, Eric W. Tramel, &amp;amp; Leticia F. Cugliandolo[Link][Chapter PDFs]</summary>
+</entry>
+<entry>
+<title>Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging</title>
+<link href="http://localhost:3000/btk2015/" rel="alternate" type="text/html" title="Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging" />
+<published>2015-12-15T00:00:00+01:00</published>
+<updated>2015-12-15T00:00:00+01:00</updated>
+<id>http://localhost:3000/btk2015</id>
+<content type="html" xml:base="http://localhost:3000/btk2015/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Jean Barbier, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
+&lt;a href=&quot;http://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013/pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;a href=&quot;https://github.com/jeanbarbier/scampi&quot;&gt;[Code]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;Visual comparison for some \(512 \times 512\) images: a zoom on the original image (left) is compared with the Scampi (center) and GrAMPA (right) reconstructions for different settings, all with a fixed SNIPE prior parameter \(\omega = 0\). From top to bottom are peppers at \(\alpha =0.1\) for an ISNR of 20dB, Lena at \(\alpha =0.5\) for an ISNR of 40dB, Barbara at \(\alpha =0.5\) for an ISNR of 30dB and &lt;i&gt;phantom&lt;/i&gt; at \(\alpha =0.1\) for an ISNR of 20dB.
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Reconstruction of images from noisy linear measurements is a core problem in image processing, for which convex optimization methods based on total variation (TV) minimization have been the long-standing state-of-the-art. We present an alternative probabilistic reconstruction procedure based on approximate message-passing, Scampi, which operates in the compressive regime, where the inverse imaging problem is underdetermined. While the proposed method is related to the recently proposed GrAMPA algorithm of Borgerding, Schniter, and Rangan, we further develop the probabilistic approach to compressive imaging by introducing an expectation-maximization learning of model parameters, making the Scampi robust to model uncertainties. Additionally, our numerical experiments indicate that Scampi can provide reconstruction performance superior to both GrAMPA as well as convex approaches to TV reconstruction. Finally, through exhaustive best-case experiments, we show that in many cases the maximal performance of both Scampi and convex TV can be quite close, even though the approaches are a prori distinct. The theoretical reasons for this correspondence remain an open question. Nevertheless, the proposed algorithm remains more practical, as it requires far less parameter tuning to perform optimally.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conference{btk2015,
+    Author = {Jean Barbier and Eric W. Tramel and Florent Krzakala},
+    Booktitle = {Proc. Int. Mtg. on High-Dimensional Data Driven Science (HD\textasciicircum 3)},
+    Title = {Scampi: a robust approximate message-passing framework for compressive imaging},
+    Year = {2015}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="imaging" />
+<category term="inverse problems" />
+<category term="approximate message passing" />
+<summary>Jean Barbier, Eric W. Tramel, &amp;amp; Florent Krzakala[Link][PDF][Code]</summary>
+</entry>
+<entry>
+<title>Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy</title>
+<link href="http://localhost:3000/gtk2015/" rel="alternate" type="text/html" title="Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy" />
+<published>2015-12-01T00:00:00+01:00</published>
+<updated>2015-12-01T00:00:00+01:00</updated>
+<id>http://localhost:3000/gtk2015</id>
+<content type="html" xml:base="http://localhost:3000/gtk2015/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Marylou Gabrié, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
+&lt;a href=&quot;http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy.pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;a href=&quot;http://github.com/sphinxteam/Boltzmann.jl&quot;&gt;[Code]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;Estimates of the per-sample log-likelihood over the MNIST test set, normalized by the total number of units, as a function of the number of training epochs. The results for the different training algorithms are plotted in different colors with the same color code used for both panels. &lt;b&gt;Left panel:&lt;/b&gt; Pseudo log-likelihood estimate. The difference between EMF algorithms and contrastive divergence algorithms is minimal. &lt;b&gt;Right panel:&lt;/b&gt; EMF log-likelihood estimate at 2nd order. The improvement from MF to TAP is clear. Perhaps reasonably, TAP demonstrates an advantage over CD and PCD. Notice how the second-order EMF approximation of L provides less noisy estimates, at a lower computational cost.&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Restricted Boltzmann machines are undirected neural networks which have been shown tobe effective in many applications, including serving as initializations fortraining deep multi-layer neural networks. One of the main reasons for their success is the existence of efficient and practical stochastic algorithms, such as contrastive divergence,for unsupervised training. We propose an alternative deterministic iterative procedure based on an improved mean field method from statistical physics known as the Thouless-Anderson-Palmer approach. We demonstrate that our algorithm provides performance equal to, and sometimes superior to, persistent contrastive divergence, while also providing a clear and easy to evaluate objective function. We believe that this strategycan be easily generalized to other models as well as to more accurate higher-order approximations, paving the way for systematic improvements in training Boltzmann machines with hidden units.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    conference{GTZ2015,
+        Address = {Montreal, Canada},
+        Author = {Marylou Gabri{\&#39;e} and Eric W. Tramel and Florent Krzakala},
+        Booktitle = {Proc. Conf. on Neural Info. Processing Sys. (NIPS)},
+        Month = {June},
+        Title = {Training Restricted {B}oltzmann Machines via the {Thouless-Andreson-Palmer} Free Energy},
+        Year = {2015}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="unsupervised learning" />
+<category term="boltzmann machines" />
+<category term="machine learning" />
+<summary>Marylou Gabrié, Eric W. Tramel, &amp;amp; Florent Krzakala[Link][PDF][Code]</summary>
+</entry>
+<entry>
+<title>Sparse Estimation with the Swept Approximated Message-Passing Algorithm</title>
+<link href="http://localhost:3000/mkt2015/" rel="alternate" type="text/html" title="Sparse Estimation with the Swept Approximated Message-Passing Algorithm" />
+<published>2015-07-07T00:00:00+02:00</published>
+<updated>2015-07-07T00:00:00+02:00</updated>
+<id>http://localhost:3000/mkt2015</id>
+<content type="html" xml:base="http://localhost:3000/mkt2015/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Andre Manoel, Eric W. Tramel, Florent Krzakala, &amp;amp; Lenka Zdeborová&lt;/h3&gt;
+&lt;a href=&quot;http://machinelearning.wustl.edu/mlpapers/papers/icml2015_manoel15&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://machinelearning.wustl.edu/mlpapers/paper_files/icml2015_manoel15.pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;a href=&quot;https://github.com/eric-tramel/SwAMP-Demo&quot;&gt;[Code]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;
+At the top, convergence behavior of AMP and
+SwAMP are compared for CS signal reconstruction for correlated sensing matrices on sparse signals of size \(N = 10^4\) and sparsity \(\rho = 0.2\) with noise variance \(\Delta = 10^{−8}\). The projec- tors have been created according to (30) and are rank-deficient for \(\eta &amp;lt; \alpha = 0.6\). At the bottom, a comparison between log- scale average reconstruction MSE obtained by SwAMP , BPDN, adaptive Lasso, and \(\ell_p\) regularization is given for signals of size \(N = 1024\) for \(\Delta=10−8\), \(\rho=0.2\),and \(\alpha=0.6\).
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Approximate Message Passing (AMP) has been shown to be a superior method for inference problems, such as the recovery of signals from sets of noisy, lower-dimensionality measurements, both in terms of reconstruction accuracy and in computational efficiency. However, AMP suffers from serious convergence issues in contexts that do not exactly match its assumptions. We propose a new approach to stabilizing AMP in these contexts by applying AMP updates to individual coefficients rather than in parallel. Our results show that this change to the AMP iteration can provide expected, but hitherto unobtainable, performance for problems on which the standard AMP iteration diverges. Additionally, we find that the computational costs of this &lt;em&gt;swept&lt;/em&gt; coefficient update scheme is not unduly burden- some, allowing it to be applied efficiently to signals of large dimensionality.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conference{mtk2015,
+    Address = {Lille, France},
+    Author = {Andre Manoel and Eric W. Tramel and Florent Krzakala and Lenka Zdeborov\&#39;{a}},
+    Booktitle = {Proc. Int. Conf. on Machine Learning (ICML)},
+    Month = {July},
+    Title = {Sparse Estimation with the Swept Approximated Message-Passing Algorithm},
+    Year = {2015}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="statistical inference" />
+<category term="approximate message passing" />
+<category term="signal processing" />
+<category term="linear regression" />
+<category term="logistic regression" />
+<summary>Andre Manoel, Eric W. Tramel, Florent Krzakala, &amp;amp; Lenka Zdeborová[Link][PDF][Code]</summary>
+</entry>
+<entry>
+<title>Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators</title>
+<link href="http://localhost:3000/mtt2015/" rel="alternate" type="text/html" title="Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators" />
+<published>2015-01-01T00:00:00+01:00</published>
+<updated>2015-01-01T00:00:00+01:00</updated>
+<id>http://localhost:3000/mtt2015</id>
+<content type="html" xml:base="http://localhost:3000/mtt2015/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel&lt;/h3&gt;
+&lt;a href=&quot;http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&amp;amp;Sect2=HITOFF&amp;amp;p=1&amp;amp;u=/netahtml/PTO/search-bool.html&amp;amp;r=1&amp;amp;f=G&amp;amp;l=50&amp;amp;d=PALL&amp;amp;RefSrch=yes&amp;amp;Query=PN/9160900&quot;&gt;[Link]&lt;/a&gt;
+&lt;!-- &lt;a href=&quot;http://&quot;&gt;[PDF]&lt;/a&gt; --&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;br /&gt;
+&lt;!-- &lt;figcaption class=&quot;caption&quot;&gt;
+caption
+&lt;/figcaption&gt; --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Systems and methods for capturing light field information including spatial and angular information using an image pickup device that includes an image sensor and at least one spatial light modulator (SLM) take multiple captures of a scene using the at least one SLM to obtain coded projections of a light field of the scene, wherein each capture is taken using at least one pattern on the at least one SLM, and recover light field data using a reconstruction process on the obtained coded projections of the light field.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;patent{MTT2015,
+    Address = {Tokyo, Japan},
+    Assignee = {Canon Kabushiki Kaisha},
+    Author = {Ankit Mohan and Siu-Kei Tin and Eric W. Tramel},
+    Dayfiled = {29},
+    Language = {English},
+    Monthfiled = {Feburary},
+    Nationality = {U.S.},
+    Number = {US9160900 B2},
+    Title = {Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators},
+    Year = {October 13, 2015},
+    Yearfiled = {2012}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="lightfield imaging" />
+<summary>Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel[Link]</summary>
+</entry>
+<entry>
+<title>Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction</title>
+<link href="http://localhost:3000/ttf2014/" rel="alternate" type="text/html" title="Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction" />
+<published>2014-09-01T00:00:00+02:00</published>
+<updated>2014-09-01T00:00:00+02:00</updated>
+<id>http://localhost:3000/ttf2014</id>
+<content type="html" xml:base="http://localhost:3000/ttf2014/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Maria Trocan, Eric W. Tramel, James E. Fowler, &amp;amp; Beatrice Pesquet-Popescu&lt;/h3&gt;
+&lt;a href=&quot;http://link.springer.com/article/10.1007/s11042-012-1330-7&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;/assets/doc/ttf2014.pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;
+The multistage DC-CS reconstruction framework using ME/MC and DE/DC for multiview video.
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; In the compressed sensing of multiview images and video sequences, signal prediction is incorporated into the reconstruction process in order to exploit the high degree of interview and temporal correlation common to multiview scenarios. Instead of recovering each individual frame independently, neighboring frames in both the view and temporal directions are used to calculate a prediction of a target frame, and the difference is used to drive a residual-based compressed-sensing reconstruction. The proposed approach demonstrates a significant gain in reconstruction quality relative to the straightforward compressed-sensing recovery of each frame independently of the others in the multiview set, as well as a significant performance advantage as compared to a pair of benchmark multiple-frame compressed-sensing reconstructions.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{ttf2014,
+    Author = {Maria Trocan and Eric W. Tramel and James E. Fowler and Beatrice Pesquet-Popescu},
+    Journal = {Multimedia Tools and Applications},
+    Pages = {1-27},
+    Title = {Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction},
+    Year = 2014}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="multiview imaging" />
+<category term="block cs" />
+<summary>Maria Trocan, Eric W. Tramel, James E. Fowler, &amp;amp; Beatrice Pesquet-Popescu[Link][PDF]</summary>
+</entry>
+<entry>
+<title>Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification</title>
+<link href="http://localhost:3000/clt2014b/" rel="alternate" type="text/html" title="Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification" />
+<published>2014-09-01T00:00:00+02:00</published>
+<updated>2014-09-01T00:00:00+02:00</updated>
+<id>http://localhost:3000/clt2014b</id>
+<content type="html" xml:base="http://localhost:3000/clt2014b/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;Chen Chen, Wei Li, Eric W. Tramel, Minshan Cui, Saurabh Prasad, &amp;amp; James E. Fowler&lt;/h3&gt;
+&lt;a href=&quot;http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;amp;arnumber=6705590&amp;amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6705590&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;/assets/doc/clt2014b.pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;a href=&quot;http://www.utdallas.edu/~cxc123730/MH-Preprocessing.zip&quot;&gt;[Code]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;
+Single spectral-band images (band 26) from the Indian Pines dataset preprocessed by various methods. Top row (noise-free case): original dataset, MH prediction, LM filtering, and Wiener filtering. Bottom row (noisy case, SNR = 7.6dB): original dataset with additive noise, MH prediction, LM filtering, and Wiener filtering.
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Spectral-spatial preprocessing using multihypothesis prediction is proposed for improving accuracy of hyperspectral image classification. Specifically, multiple spatially collocated pixel vectors are used as a hypothesis set from which a prediction for each pixel vector of interest is generated. Additionally, a spectral-band-partitioning strategy based on inter-band correlation coefficients is proposed to improve the representational power of the hypothesis set. To calculate an optimal linear combination of the hypothesis predictions, a distance-weighted Tikhonov regularization to an ill-posed least-squares optimization is used. The resulting predictions effectively integrate spectral and spatial information and thus are used during classification in lieu of the original pixel vectors. This processed hyperspectral image dataset has less intraclass variability and more spatial regularity as compared to the original dataset. Classification results for two hyperspectral image datasets demonstrate that the proposed method can enhance the classification accuracy of both maximum-likelihood and support vector classifiers, especially under small sample size constraints and noise corruption.&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{clt2014b,
+    Author = {Chen Chen and Wei Li and Eric W. Tramel and Minshan Cui and Saurabh Prasad and James E. Fowler},
+    Journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+    Number = {99},
+    Title = {Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification},
+    Volume = {PP},
+    Year = {2014}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="supervised classification" />
+<category term="hyperspectral imaging" />
+<category term="machine learning" />
+<category term="remote sensing" />
+<summary>Chen Chen, Wei Li, Eric W. Tramel, Minshan Cui, Saurabh Prasad, &amp;amp; James E. Fowler[Link][PDF][Code]</summary>
+</entry>
+</feed>
