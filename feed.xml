@@ -3,9 +3,208 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" />
-<updated>2016-04-28T18:30:05+02:00</updated>
+<updated>2016-06-04T21:18:20+02:00</updated>
 <id>http://eric-tramel.github.io/</id>
 <title>Eric W. Tramel</title>
+<entry>
+<title>Nothing to Julia in Minutes</title>
+<link href="http://eric-tramel.github.io/nothingToJulia/" rel="alternate" type="text/html" title="Nothing to Julia in Minutes" />
+<published>2016-04-06T00:00:00+02:00</published>
+<updated>2016-04-06T00:00:00+02:00</updated>
+<id>http://eric-tramel.github.io/nothingToJulia</id>
+<content type="html" xml:base="http://eric-tramel.github.io/nothingToJulia/">&lt;h1 id=&quot;nothing-to-julia-in-minutes&quot;&gt;Nothing to Julia in Minutes&lt;/h1&gt;
+
+&lt;h2 id=&quot;os-x-command-line-tools&quot;&gt;OS X Command Line Tools&lt;/h2&gt;
+&lt;p&gt;The first step before doing anything else will be to make sure that we have our OS X basic command-lined dev tools. You probably won’t use these tools far into the future, but having these will allow us to bootstrap into the software we want later.&lt;/p&gt;
+
+&lt;h3 id=&quot;install&quot;&gt;Install&lt;/h3&gt;
+&lt;p&gt;Run the following command in &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;homebrew&quot;&gt;Homebrew&lt;/h2&gt;
+&lt;p&gt;The starting point for managing our installs will be Homebrew. Homebrew is a &lt;br /&gt;
+great tool for finding, installing, and upgrading open source tools on OS X.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-1&quot;&gt;Install&lt;/h3&gt;
+&lt;p&gt;The easiest way to install this is via the terminal. Just copy paste the &lt;br /&gt;
+following into the terminal.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ /usr/bin/ruby -e &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Subsequently, we’ll need to make sure that everything is updated.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ brew update; brew upgrade;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The call to &lt;code class=&quot;highlighter-rouge&quot;&gt;update&lt;/code&gt; should make sure that our current list of packages managed by Brew is updated. Subsequently, &lt;code class=&quot;highlighter-rouge&quot;&gt;upgrade&lt;/code&gt; will update all currently installed packages.&lt;/p&gt;
+
+&lt;h2 id=&quot;julia&quot;&gt;Julia&lt;/h2&gt;
+&lt;p&gt;Julia…what can we say. A thing of beauty. Let get her running.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-2&quot;&gt;Install&lt;/h3&gt;
+&lt;p&gt;For my part, I’ve had some historical problems building Julia from source on OS X. I think that most of these issues have been resolved. However, the build process can also be quite slow. So, instead, lets take a look at grabbing the pre-built binaries and linking to those as needed.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://julialang.org/downloads/&quot;&gt;&lt;strong&gt;Get the Julia v.0.4.5 DMG here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Double click the DMG and drag &lt;code class=&quot;highlighter-rouge&quot;&gt;Julia-0.4.5.&lt;/code&gt; into your applications folder.&lt;/p&gt;
+
+&lt;h3 id=&quot;running-easy&quot;&gt;Running (Easy)&lt;/h3&gt;
+&lt;p&gt;The easiest thing to do at this point is to double click the &lt;code class=&quot;highlighter-rouge&quot;&gt;Julia-0.4.5.&lt;/code&gt; &lt;br /&gt;
+application. It should open up a REPL window saying something like the following&lt;br /&gt;
+at the top:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   _       _ _(_)_     |  A fresh approach to technical computing
+  (_)     | (_) (_)    |  Documentation: http://docs.julialang.org
+   _ _   _| |_  __ _   |  Type &quot;?help&quot; for help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 0.4.5 (2016-03-18 00:58 UTC)
+ _/ |\__&#39;_|_|_|\__&#39;_|  |  Official http://julialang.org/ release
+|__/                   |  x86_64-apple-darwin13.4.0
+
+julia&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Much like Python and Matlab, Julia ships with an interactive scripting &lt;br /&gt;
+environment which allows you run commands one at a time and investigate the &lt;br /&gt;
+results to your hearts content. Matlab-like options such as &lt;code class=&quot;highlighter-rouge&quot;&gt;whos()&lt;/code&gt; also exist. There are some other advanced features of the REPL that we’ll cover later (such as running bash commands).&lt;/p&gt;
+
+&lt;h2 id=&quot;jupyter&quot;&gt;Jupyter&lt;/h2&gt;
+&lt;p&gt;Jupyter is a visual environment for composing Julia, Python, and R scripts. &lt;br /&gt;
+One can write code in line with figures and TeX text, which makes it a really &lt;br /&gt;
+nice for sharing results back and forth with others as well as for keeping notes for yourself.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-3&quot;&gt;Install&lt;/h3&gt;
+
+&lt;h4 id=&quot;python&quot;&gt;1. &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;We want to make sure that we have a version of Python that we can actually play&lt;br /&gt;
+with. Unfortunately, the one given to us by the OS X devtools does not like to &lt;br /&gt;
+place nice with others. Lets get Python 3  as well as some buildtools &lt;br /&gt;
+via Homebrew.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ brew install python3
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;...build output...&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;jupyter-1&quot;&gt;2. &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;From here we should be able to use &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3&lt;/code&gt; to install &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ pip3 install jupyter
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+&lt;p&gt;Now we should have jupyter installed on the system. To run Jupyter and create a notebook from terminal, you should now be able to simply run&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;which will open up a browser window to the home directory for Jupyter.&lt;/p&gt;
+
+&lt;h3 id=&quot;julia-kernel-for-jupyter&quot;&gt;Julia Kernel for Jupyter&lt;/h3&gt;
+&lt;p&gt;Since Jupyter is general across a number of different possible languages, we need to configure Jupyter for using our current instally of Julia. To do this, we will open up Julia and install the &lt;a href=&quot;https://github.com/JuliaLang/IJulia.jl&quot;&gt;IJulia.jl&lt;/a&gt; package. We can do this from Julia by running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;IJulia&quot;)
+julia&amp;gt; Pkg.build(&quot;IJulia&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;plotting-libraries&quot;&gt;Plotting Libraries&lt;/h2&gt;
+
+&lt;h3 id=&quot;matplotlib&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Certainly one of the most important libraries to install. We can install the Python package &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; and use it in Julia in the following manner. First, lets make sure that we have a copy external to Julia by installing &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ pip3 install matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next, lets install a couple of packages within Julia to call &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; from within a Julia script.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;PyCall&quot;)
+julia&amp;gt; Pkg.build(&quot;PyCall&quot;)
+julia&amp;gt; Pkg.add(&quot;PyPlot&quot;)
+julia&amp;gt; Pkg.build(&quot;PyPlot&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And voilà, we’re done! Julia has a nice interface for interacting with Python libraries, which we will see in the future.&lt;/p&gt;
+
+&lt;h2 id=&quot;scikit-learn&quot;&gt;Scikit-Learn&lt;/h2&gt;
+&lt;p&gt;We will also be taking advantage of some features of Scikit-Learn, so lets install that as well. Again, we can install Scikit-Learn both exeternally on our system, and also allowing for internal references to the Scikit libraries from within Julia. First, lets install Scikit via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3&lt;/code&gt;…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    computer-name:~ pip3 install scikit-learn
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So now we have a Scikit for use from our Python3 build. But also, lets install a copy for Julia. We will make use of the &lt;a href=&quot;https://github.com/cstjean/ScikitLearn.jl&quot;&gt;ScikitLearn.jl&lt;/a&gt; wrapper to ease calling Scikit funcitons from within Julia (though we could also do this directly via PyCall.jl). To ease some common build problems, we will use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Conda.jl&lt;/code&gt; wrapper of the python Conda package manager to create a Julia-local copy of Scikit-learn. Then we’ll install the wrapper package and be done.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;Conda&quot;)
+julia&amp;gt; Pkg.build(&quot;Conda&quot;)
+julia&amp;gt; Conda.add(&quot;scikit-learn&quot;)
+julia&amp;gt; Pkg.add(&quot;ScikitLearn&quot;)
+julia&amp;gt; Pkg.build(&quot;ScikitLearn&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can test to make sure that we have it working via&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; using ScikitLearn
+julia&amp;gt; @sk_import datasets: load_digits
+julia&amp;gt; data = load_digits()
+Dict{Any,Any} with 5 entries:
+  &quot;images&quot;       =&amp;gt; 1797x8x8 Array{Float64,3}:…
+  &quot;target_names&quot; =&amp;gt; [0,1,2,3,4,5,6,7,8,9]
+  &quot;data&quot;         =&amp;gt; 1797x64 Array{Float64,2}:…
+  &quot;DESCR&quot;        =&amp;gt; &quot;Optical Recognition of Handwritten Digits Data Set\n===========================…
+  &quot;target&quot;       =&amp;gt; [0,1,2,3,4,5,6,7,8,9  …  5,4,8,8,4,9,0,8,9,8]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lets have some fun and use ASCII Plots to show us an image of some digits&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;ASCIIPlots&quot;)
+julia&amp;gt; using ASCIIPlots
+julia&amp;gt; imagesc(squeeze(data[&quot;images&quot;][1,:,:],1))
+
+
+        + @## +
+        @#@## @#+
+      + @#+   @##
+      + @#    # #
+      + #     # #
+      + @#  + @##
+      + @#+ # @#
+        # @##
+
+
+julia&amp;gt; imagesc(squeeze(data[&quot;images&quot;][8,:,:],1))
+
+
+        # # @#@#@#+
+        # # + # @#
+            # @#+
+      + # # @#@##
+      + # @#@#+
+          @##
+        # @#+
+        @##
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Seems to work!&lt;/p&gt;
+</content>
+<category term="post" />
+<category term="build" />
+<category term="software" />
+<category term="Julia" />
+<category term="Jupyter" />
+<category term="Python" />
+<summary>Nothing to Julia in Minutes</summary>
+</entry>
 <entry>
 <title>Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques</title>
 <link href="http://eric-tramel.github.io/tvg2016/" rel="alternate" type="text/html" title="Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques" />
@@ -376,47 +575,5 @@ The multistage DC-CS reconstruction framework using ME/MC and DE/DC for multivie
 <category term="multiview imaging" />
 <category term="block cs" />
 <summary>Maria Trocan, Eric W. Tramel, James E. Fowler, &amp;amp; Beatrice Pesquet-Popescu[Link][PDF]</summary>
-</entry>
-<entry>
-<title>Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification</title>
-<link href="http://eric-tramel.github.io/clt2014b/" rel="alternate" type="text/html" title="Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification" />
-<published>2014-09-01T00:00:00+02:00</published>
-<updated>2014-09-01T00:00:00+02:00</updated>
-<id>http://eric-tramel.github.io/clt2014b</id>
-<content type="html" xml:base="http://eric-tramel.github.io/clt2014b/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Chen Chen, Wei Li, Eric W. Tramel, Minshan Cui, Saurabh Prasad, &amp;amp; James E. Fowler&lt;/h3&gt;
-&lt;a href=&quot;http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;amp;arnumber=6705590&amp;amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6705590&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;/assets/doc/clt2014b.pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;a href=&quot;http://www.utdallas.edu/~cxc123730/MH-Preprocessing.zip&quot;&gt;[Code]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;
-Single spectral-band images (band 26) from the Indian Pines dataset preprocessed by various methods. Top row (noise-free case): original dataset, MH prediction, LM filtering, and Wiener filtering. Bottom row (noisy case, SNR = 7.6dB): original dataset with additive noise, MH prediction, LM filtering, and Wiener filtering.
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Spectral-spatial preprocessing using multihypothesis prediction is proposed for improving accuracy of hyperspectral image classification. Specifically, multiple spatially collocated pixel vectors are used as a hypothesis set from which a prediction for each pixel vector of interest is generated. Additionally, a spectral-band-partitioning strategy based on inter-band correlation coefficients is proposed to improve the representational power of the hypothesis set. To calculate an optimal linear combination of the hypothesis predictions, a distance-weighted Tikhonov regularization to an ill-posed least-squares optimization is used. The resulting predictions effectively integrate spectral and spatial information and thus are used during classification in lieu of the original pixel vectors. This processed hyperspectral image dataset has less intraclass variability and more spatial regularity as compared to the original dataset. Classification results for two hyperspectral image datasets demonstrate that the proposed method can enhance the classification accuracy of both maximum-likelihood and support vector classifiers, especially under small sample size constraints and noise corruption.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{clt2014b,
-    Author = {Chen Chen and Wei Li and Eric W. Tramel and Minshan Cui and Saurabh Prasad and James E. Fowler},
-    Journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
-    Number = {99},
-    Title = {Spectral-Spatial Preprocessing Using Multihypothesis Prediction for Noise-Robust Hyperspectral Image Classification},
-    Volume = {PP},
-    Year = {2014}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="supervised classification" />
-<category term="hyperspectral imaging" />
-<category term="machine learning" />
-<category term="remote sensing" />
-<summary>Chen Chen, Wei Li, Eric W. Tramel, Minshan Cui, Saurabh Prasad, &amp;amp; James E. Fowler[Link][PDF][Code]</summary>
 </entry>
 </feed>
