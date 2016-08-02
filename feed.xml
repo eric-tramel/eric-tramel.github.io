@@ -3,14 +3,14 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" />
-<updated>2016-06-04T21:18:20+02:00</updated>
+<updated>2016-08-01T20:48:25-05:00</updated>
 <id>http://eric-tramel.github.io/</id>
 <title>Eric W. Tramel</title>
 <entry>
 <title>Nothing to Julia in Minutes</title>
 <link href="http://eric-tramel.github.io/nothingToJulia/" rel="alternate" type="text/html" title="Nothing to Julia in Minutes" />
-<published>2016-04-06T00:00:00+02:00</published>
-<updated>2016-04-06T00:00:00+02:00</updated>
+<published>2016-04-06T00:00:00-05:00</published>
+<updated>2016-04-06T00:00:00-05:00</updated>
 <id>http://eric-tramel.github.io/nothingToJulia</id>
 <content type="html" xml:base="http://eric-tramel.github.io/nothingToJulia/">&lt;h1 id=&quot;nothing-to-julia-in-minutes&quot;&gt;Nothing to Julia in Minutes&lt;/h1&gt;
 
@@ -208,8 +208,8 @@ julia&amp;gt; imagesc(squeeze(data[&quot;images&quot;][8,:,:],1))
 <entry>
 <title>Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques</title>
 <link href="http://eric-tramel.github.io/tvg2016/" rel="alternate" type="text/html" title="Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques" />
-<published>2016-01-01T00:00:00+01:00</published>
-<updated>2016-01-01T00:00:00+01:00</updated>
+<published>2016-01-01T00:00:00-06:00</published>
+<updated>2016-01-01T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/tvg2016</id>
 <content type="html" xml:base="http://eric-tramel.github.io/tvg2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari&lt;/h3&gt;
@@ -249,10 +249,52 @@ caption
 <summary>Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari[Link][PDF]</summary>
 </entry>
 <entry>
+<title>Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines</title>
+<link href="http://eric-tramel.github.io/tmc2016/" rel="alternate" type="text/html" title="Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines" />
+<published>2016-01-01T00:00:00-06:00</published>
+<updated>2016-01-01T00:00:00-06:00</updated>
+<id>http://eric-tramel.github.io/tmc2016</id>
+<content type="html" xml:base="http://eric-tramel.github.io/tmc2016/">&lt;div align=&quot;center&quot;&gt;
+&lt;h3&gt;E. W. Tramel, A. Manoel, F. Caltagirone, M. Gabrié, &amp;amp; F. Krzakala&lt;/h3&gt;
+&lt;a href=&quot;http://arxiv.org/abs/1606.03956&quot;&gt;[Link]&lt;/a&gt;
+&lt;a href=&quot;http://arxiv.org/pdf/1606.03956v1.pdf&quot;&gt;[PDF]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;
+(Left) CS reconstruction performance over first 1,000 digit images from the MNIST test partition. Results for non-i.i.d. AMP, support-based BRBM-AMP, and GRBM-AMP are on the left, center, and right, respectively. The \(M = K\) oracle support transition is indicated by the black dotted line, and the spinodal transition [Krzakala et al. 2012] by the solid one. Top: Average reconstruction accuracy in MSE measured in dB. Bottom: Average reconstruction correlation with original digit image. (Right) Visual comparison of reconstructions for a single digit image \((\rho = 0.25)\) for small values of \(\alpha\).
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; In this work, we consider compressed sensing reconstruction from (M) measurements of (K)-sparse structured signals which do not possess a writable correlation model. Assuming that a generative statistical model, such as a Boltzmann machine, can be trained in an unsupervised manner on example signals, we demonstrate how this signal model can be used within a Bayesian framework of signal reconstruction. By deriving a message-passing inference for general distribution restricted Boltzmann machines, we are able to integrate these inferred signal models into approximate message passing for compressed sensing reconstruction. Finally, we show for the MNIST dataset that this approach can be very effective, even for (M&amp;lt;K).&lt;/p&gt;
+
+&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{tdk2016,
+    Author = {Eric W. Tramel and Andre Manoel and Francesco Caltagirone and Marylou Gabri{\&#39;e} and Florent Krzakala},
+    Journal = {Proc. IEEE Info. Theory Workshop},
+    Title = Inferring Sparsity: Compressed Sensing using Generalized Restricted {B}oltzmann Machines},
+    Year = {2016}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+<category term="publication" />
+<category term="compressed sensing" />
+<category term="inverse problems" />
+<category term="boltzmann machines" />
+<category term="unsupervised learning" />
+<category term="inference" />
+<category term="approximate message passing" />
+<category term="machine learning" />
+<summary>E. W. Tramel, A. Manoel, F. Caltagirone, M. Gabrié, &amp;amp; F. Krzakala[Link][PDF]</summary>
+</entry>
+<entry>
 <title>Approximate Message Passing with Restricted Boltzmann Machine Priors</title>
 <link href="http://eric-tramel.github.io/tdk2016/" rel="alternate" type="text/html" title="Approximate Message Passing with Restricted Boltzmann Machine Priors" />
-<published>2016-01-01T00:00:00+01:00</published>
-<updated>2016-01-01T00:00:00+01:00</updated>
+<published>2016-01-01T00:00:00-06:00</published>
+<updated>2016-01-01T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/tdk2016</id>
 <content type="html" xml:base="http://eric-tramel.github.io/tdk2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Eric W. Tramel, Angélique Drémeau, and Florent Krzakala&lt;/h3&gt;
@@ -293,8 +335,8 @@ Visual comparison of reconstructions for four test digits across \(\alpha\) for 
 <entry>
 <title>Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System</title>
 <link href="http://eric-tramel.github.io/rtg2016/" rel="alternate" type="text/html" title="Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System" />
-<published>2016-01-01T00:00:00+01:00</published>
-<updated>2016-01-01T00:00:00+01:00</updated>
+<published>2016-01-01T00:00:00-06:00</published>
+<updated>2016-01-01T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/rtg2016</id>
 <content type="html" xml:base="http://eric-tramel.github.io/rtg2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Boshra Rajaei, Eric W. Tramel, Sylvain Gigan, Florent Krzakala, &amp;amp; Laurent Daudet&lt;/h3&gt;
@@ -333,8 +375,8 @@ Visual comparison of reconstructions for four test digits across \(\alpha\) for 
 <entry>
 <title>Statistical Physics, Optimization, Inference, and Message-Passing Algorithms</title>
 <link href="http://eric-tramel.github.io/krz2016/" rel="alternate" type="text/html" title="Statistical Physics, Optimization, Inference, and Message-Passing Algorithms" />
-<published>2016-01-01T00:00:00+01:00</published>
-<updated>2016-01-01T00:00:00+01:00</updated>
+<published>2016-01-01T00:00:00-06:00</published>
+<updated>2016-01-01T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/krz2016</id>
 <content type="html" xml:base="http://eric-tramel.github.io/krz2016/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Florent Krzakala, Federico Ricci-Tersenghi, Lenka Zdeborová, Riccardo Zecchina, Eric W. Tramel, &amp;amp; Leticia F. Cugliandolo&lt;/h3&gt;
@@ -373,8 +415,8 @@ caption
 <entry>
 <title>Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging</title>
 <link href="http://eric-tramel.github.io/btk2015/" rel="alternate" type="text/html" title="Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging" />
-<published>2015-12-15T00:00:00+01:00</published>
-<updated>2015-12-15T00:00:00+01:00</updated>
+<published>2015-12-15T00:00:00-06:00</published>
+<updated>2015-12-15T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/btk2015</id>
 <content type="html" xml:base="http://eric-tramel.github.io/btk2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Jean Barbier, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
@@ -412,8 +454,8 @@ caption
 <entry>
 <title>Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy</title>
 <link href="http://eric-tramel.github.io/gtk2015/" rel="alternate" type="text/html" title="Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy" />
-<published>2015-12-01T00:00:00+01:00</published>
-<updated>2015-12-01T00:00:00+01:00</updated>
+<published>2015-12-01T00:00:00-06:00</published>
+<updated>2015-12-01T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/gtk2015</id>
 <content type="html" xml:base="http://eric-tramel.github.io/gtk2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Marylou Gabrié, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
@@ -451,8 +493,8 @@ caption
 <entry>
 <title>Sparse Estimation with the Swept Approximated Message-Passing Algorithm</title>
 <link href="http://eric-tramel.github.io/mkt2015/" rel="alternate" type="text/html" title="Sparse Estimation with the Swept Approximated Message-Passing Algorithm" />
-<published>2015-07-07T00:00:00+02:00</published>
-<updated>2015-07-07T00:00:00+02:00</updated>
+<published>2015-07-07T00:00:00-05:00</published>
+<updated>2015-07-07T00:00:00-05:00</updated>
 <id>http://eric-tramel.github.io/mkt2015</id>
 <content type="html" xml:base="http://eric-tramel.github.io/mkt2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Andre Manoel, Eric W. Tramel, Florent Krzakala, &amp;amp; Lenka Zdeborová&lt;/h3&gt;
@@ -496,8 +538,8 @@ SwAMP are compared for CS signal reconstruction for correlated sensing matrices 
 <entry>
 <title>Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators</title>
 <link href="http://eric-tramel.github.io/mtt2015/" rel="alternate" type="text/html" title="Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators" />
-<published>2015-01-01T00:00:00+01:00</published>
-<updated>2015-01-01T00:00:00+01:00</updated>
+<published>2015-01-01T00:00:00-06:00</published>
+<updated>2015-01-01T00:00:00-06:00</updated>
 <id>http://eric-tramel.github.io/mtt2015</id>
 <content type="html" xml:base="http://eric-tramel.github.io/mtt2015/">&lt;div align=&quot;center&quot;&gt;
 &lt;h3&gt;Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel&lt;/h3&gt;
@@ -536,44 +578,5 @@ caption
 <category term="compressed sensing" />
 <category term="lightfield imaging" />
 <summary>Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel[Link]</summary>
-</entry>
-<entry>
-<title>Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction</title>
-<link href="http://eric-tramel.github.io/ttf2014/" rel="alternate" type="text/html" title="Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction" />
-<published>2014-09-01T00:00:00+02:00</published>
-<updated>2014-09-01T00:00:00+02:00</updated>
-<id>http://eric-tramel.github.io/ttf2014</id>
-<content type="html" xml:base="http://eric-tramel.github.io/ttf2014/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Maria Trocan, Eric W. Tramel, James E. Fowler, &amp;amp; Beatrice Pesquet-Popescu&lt;/h3&gt;
-&lt;a href=&quot;http://link.springer.com/article/10.1007/s11042-012-1330-7&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;/assets/doc/ttf2014.pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;
-The multistage DC-CS reconstruction framework using ME/MC and DE/DC for multiview video.
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; In the compressed sensing of multiview images and video sequences, signal prediction is incorporated into the reconstruction process in order to exploit the high degree of interview and temporal correlation common to multiview scenarios. Instead of recovering each individual frame independently, neighboring frames in both the view and temporal directions are used to calculate a prediction of a target frame, and the difference is used to drive a residual-based compressed-sensing reconstruction. The proposed approach demonstrates a significant gain in reconstruction quality relative to the straightforward compressed-sensing recovery of each frame independently of the others in the multiview set, as well as a significant performance advantage as compared to a pair of benchmark multiple-frame compressed-sensing reconstructions.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{ttf2014,
-    Author = {Maria Trocan and Eric W. Tramel and James E. Fowler and Beatrice Pesquet-Popescu},
-    Journal = {Multimedia Tools and Applications},
-    Pages = {1-27},
-    Title = {Compressed-Sensing Recovery of Multiview Image and Video Sequences using Signal Prediction},
-    Year = 2014}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="multiview imaging" />
-<category term="block cs" />
-<summary>Maria Trocan, Eric W. Tramel, James E. Fowler, &amp;amp; Beatrice Pesquet-Popescu[Link][PDF]</summary>
 </entry>
 </feed>
