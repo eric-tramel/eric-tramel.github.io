@@ -1,18 +1,183 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-<generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
-<link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" />
-<link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" />
-<updated>2016-08-01T20:48:25-05:00</updated>
-<id>http://eric-tramel.github.io/</id>
-<title>Eric W. Tramel</title>
-<entry>
-<title>Nothing to Julia in Minutes</title>
-<link href="http://eric-tramel.github.io/nothingToJulia/" rel="alternate" type="text/html" title="Nothing to Julia in Minutes" />
-<published>2016-04-06T00:00:00-05:00</published>
-<updated>2016-04-06T00:00:00-05:00</updated>
-<id>http://eric-tramel.github.io/nothingToJulia</id>
-<content type="html" xml:base="http://eric-tramel.github.io/nothingToJulia/">&lt;h1 id=&quot;nothing-to-julia-in-minutes&quot;&gt;Nothing to Julia in Minutes&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" /><updated>2019-12-29T22:24:29-06:00</updated><id>http://eric-tramel.github.io/feed.xml</id><title type="html">Eric W. Tramel, Ph.D.</title><entry><title type="html">Site Refresh, 2019</title><link href="http://eric-tramel.github.io/SiteRefresh/" rel="alternate" type="text/html" title="Site Refresh, 2019" /><published>2019-12-26T00:00:00-06:00</published><updated>2019-12-26T00:00:00-06:00</updated><id>http://eric-tramel.github.io/SiteRefresh</id><content type="html" xml:base="http://eric-tramel.github.io/SiteRefresh/">&lt;p&gt;It has come time, &lt;strong&gt;once again&lt;/strong&gt;, to revisit the personal site. Now, with a few 
+more years of experience, and some more time for the tools to develop, it seems
+a nice time to refresh the content, make sure things are up to date, and to
+tweak the presentation a bit so that it is more to my liking.&lt;/p&gt;
+
+&lt;h2 id=&quot;todos&quot;&gt;TODOS&lt;/h2&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Finish converting codeblocks to Nord theme (finish the SASS)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Fix codeblock border&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Convert site color scheme into Nord.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;del&gt;[ ] Figure out why SASS won’t accept variables imported from SCSS?&lt;/del&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Get code blocks centered&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;del&gt;[ ] Figure out why Jekyll/Kramdown is not converting fence blocks and only relying on Liquid-defined code blocks.&lt;/del&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Fix MathJax header script to use the right AMS formatting.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;building--previewing-site&quot;&gt;Building &amp;amp; Previewing Site&lt;/h2&gt;
+
+&lt;p&gt;I ran into a big barrier on Day 1 of this expedition: I simply &lt;em&gt;could not&lt;/em&gt; get
+a working version of Ruby on my local machine to behave and build the site. There
+were many version conflicts, and then my Brew-installed Ruby was fighting and 
+conflicting with the MacOS system Ruby, and Gems were getting installed in 
+unknown locations, etc.&lt;/p&gt;
+
+&lt;p&gt;To overcome this, I went with a docker solution. Specifically, running the 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/builder&lt;/code&gt; image with the right ports exposed.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;path/to/repo
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;--publish&lt;/span&gt; 35729:35729 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;--publish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4000:4000 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/srv/jekyll&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; jekyll/builder:&lt;span class=&quot;nv&quot;&gt;$JEKYLL_VERSION&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ jekyll serve &lt;span class=&quot;nt&quot;&gt;--config&lt;/span&gt; _config.yml,_config-dev.yml&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I put this together in the new &lt;code class=&quot;highlighter-rouge&quot;&gt;serve&lt;/code&gt; script.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-blocks&quot;&gt;Code Blocks&lt;/h2&gt;
+
+&lt;p&gt;One thing that I find myself more particular about these days is the humble
+code block. I want these things to look &lt;em&gt;good&lt;/em&gt;, so I’m going to do my best
+to make that happen. I’m going to put down an example code block here
+just for visualization purposes.&lt;/p&gt;
+
+&lt;p&gt;I wanted to introduce a Nord-themed syntax highlighting into the site. For this
+I needed to make reference to the &lt;a href=&quot;https://github.com/nnooney/jekyll-theme-nn&quot;&gt;following repo&lt;/a&gt; where
+Nicolas Nooney has already done a great work in implementing the theme as CSS for Rogue/Pygments.
+However, I wasn’t able to get the SCSS-&amp;gt;SASS importing of variables to work
+properly, so I migrated this content into &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass/base/variables.sass&lt;/code&gt; in order
+to make the color settings global to the entire site (and not just to the
+syntax highlighter!)&lt;/p&gt;
+
+&lt;p&gt;I make the slight variation on theme theme by going with dark backgrounds,
+instead of white, for legibility. To be able to control the styling of the 
+code block backgrounds, the colors need to be changed within the 
+global SASS, &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass/base/general.sass&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;immport&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.nn.functional&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;A Network
+    
+    A Neural Network that does something.
+    &quot;&quot;&quot;&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conv1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Conv2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxPool2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conv2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Conv2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fc1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fc2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fc3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# This is a single line comment
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conv1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fc1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fc2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fc3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;getting-fence-blocks-to-work&quot;&gt;Getting Fence Blocks to Work?&lt;/h3&gt;
+
+&lt;p&gt;Somewhere along the way, we have lost the ability to be able
+to get proper syntax highlighting when using markdown code fence
+blocks. This means that one has to use the Liquid notation format
+(which is a big bummer)! So, why are Jekyll and Kramdown not
+working together to process down these fenced code blocks properly?&lt;/p&gt;
+
+&lt;p&gt;Notably, the documentation for Jekyll is pretty bad, as well as
+that of Kramdown. So we are left with searching around on the
+internet to see if we can find anything at all to help us answer
+this question. I found &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/4619#issuecomment-191267346&quot;&gt;this reference&lt;/a&gt; in a closed
+issue. Perhaps it will be informative?&lt;/p&gt;
+
+&lt;p&gt;After a lot of work, I really couldn’t find the reason why it isn’t playing
+nice. This means that I just can’t use fenced code blocks for the time being :(
+Is this a problem with the Jekyll version? For some reason when running 
+bundler, it insists on an older &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll==3.8.5&lt;/code&gt;. Perhaps there is some version
+clash going on and I’m missing some patches?&lt;/p&gt;
+
+&lt;p&gt;For now, as I want to move on, I’ll use the liquid settings :(&lt;/p&gt;
+
+&lt;h2 id=&quot;double-checking-math-again&quot;&gt;Double Checking Math Again&lt;/h2&gt;
+
+&lt;p&gt;Is my math working? I really hope so. For instance, if &lt;script type=&quot;math/tex&quot;&gt;a \in \mathbb{R}&lt;/script&gt;,
+then we can hope for&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;|a| \leq |a+a|.&lt;/script&gt;
+
+&lt;p&gt;It seems like MathJax is a little bit broken in its original formulation. Specifically,
+it seems like the &lt;code class=&quot;highlighter-rouge&quot;&gt;\mathbb&lt;/code&gt; is not working, but this is probably due to the wrong
+script being used for the MathJaX configuration in the header.&lt;/p&gt;
+
+&lt;h2 id=&quot;revisiting-publications&quot;&gt;Revisiting Publications&lt;/h2&gt;
+
+&lt;p&gt;In the original implementation of the site, I used the same &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; layout
+for blog posts &lt;em&gt;as well as&lt;/em&gt; publication pages. Since most of the publication
+page is boilerplate, this meant a lot of by-hand editing of the individual
+pages to make them conform. This is painful and a bad idea! This is exactly
+why Jekyll has &lt;strong&gt;layouts&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Honestly, I don’t know why I didn’t do this in the first place. Probably I was
+just too new to the entire process to be able make a good decision about it
+in the first place.&lt;/p&gt;
+
+&lt;p&gt;Now the majority of the publication pages are auto-generated from some 
+preamble YAML. It still leaves open the possibility of also including some 
+custom content on each page, which will be included after the abstract if desired.&lt;/p&gt;
+
+&lt;p&gt;To be able to do this, I needed to also start using the &lt;code class=&quot;highlighter-rouge&quot;&gt;category&lt;/code&gt; property
+from Jekyll, making sure that these pages are separated out distinctly and 
+handled distinctly from the general blog posts.&lt;/p&gt;
+
+&lt;h3 id=&quot;adding-more-content&quot;&gt;Adding More Content&lt;/h3&gt;
+
+&lt;p&gt;Additionally, I had a number of works to include into the list since the 
+last time I refreshed the publication list in 2016. Finally, I also have tried
+to do my best to dig up all of the slides, presentations, papers, etc. that I
+could for these different works. My hope is that this page can serve to finally
+tie up all of these loose ends. If not for anyone else, then at least for 
+&lt;em&gt;myself&lt;/em&gt;. Honestly, it is hard to be able to dig up my own content to be 
+able to refer back to later!&lt;/p&gt;
+
+&lt;h2 id=&quot;nord-theme--sass&quot;&gt;Nord Theme &amp;amp; SASS&lt;/h2&gt;
+
+&lt;p&gt;This time around, I have spent &lt;em&gt;a lot&lt;/em&gt; of time with the SASS/SCSS of the site.
+Previously, I never touched this stuff. Especially back in 2016, when the entire
+formatting ran off of CSS, it seemed just a nightmare to be able to dig into.
+Especially for me as a front-end neophyte.&lt;/p&gt;
+
+&lt;p&gt;However, with the more recent inclusion of SASS support into Jekyll, it has been
+a little bit fun, actually, to learn more about CSS and how to format content
+properly. I also have grown to appreciate the SASS structure layout that the
+Indigo theme authors put together.&lt;/p&gt;</content><author><name>erictramel</name></author><category term="blog" /><category term="post" /><category term="site" /><summary type="html">It has come time, once again, to revisit the personal site. Now, with a few more years of experience, and some more time for the tools to develop, it seems a nice time to refresh the content, make sure things are up to date, and to tweak the presentation a bit so that it is more to my liking.</summary></entry><entry><title type="html">Efficient Per-Example Gradient Computations in Convolutional Neural Networks</title><link href="http://eric-tramel.github.io/rmt2019/" rel="alternate" type="text/html" title="Efficient Per-Example Gradient Computations in Convolutional Neural Networks" /><published>2019-12-12T00:00:00-06:00</published><updated>2019-12-12T00:00:00-06:00</updated><id>http://eric-tramel.github.io/rmt2019</id><content type="html" xml:base="http://eric-tramel.github.io/rmt2019/"></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="ppml" /><category term="engineering" /><summary type="html"></summary></entry><entry><title type="html">ToxicBlend: Virtual Screening of Toxic Compounds with Ensemble Predictors</title><link href="http://eric-tramel.github.io/zjt2019/" rel="alternate" type="text/html" title="ToxicBlend: Virtual Screening of Toxic Compounds with Ensemble Predictors" /><published>2019-05-01T00:00:00-05:00</published><updated>2019-05-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/zjt2019</id><content type="html" xml:base="http://eric-tramel.github.io/zjt2019/"></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="ensemble predictors" /><category term="toxicology" /><category term="drug discovery" /><summary type="html"></summary></entry><entry><title type="html">Federated Learning: Rewards &amp;amp; Challenges of Distributed Private ML</title><link href="http://eric-tramel.github.io/tra2019/" rel="alternate" type="text/html" title="Federated Learning: Rewards &amp; Challenges of Distributed Private ML" /><published>2019-05-01T00:00:00-05:00</published><updated>2019-05-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/tra2019</id><content type="html" xml:base="http://eric-tramel.github.io/tra2019/">&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;I discuss the basic concepts underlying the federated ML approach, the advantages it brings, as well as the challenges associated with constructing federated solutions.&lt;/p&gt;
+
+&lt;h2 id=&quot;about-qconai&quot;&gt;About Qcon.ai&lt;/h2&gt;
+
+&lt;p&gt;QCon.ai is a practical AI and machine learning conference bringing together software teams working on all aspects of AI and machine learning.&lt;/p&gt;</content><author><name></name></author><category term="publication" /><category term="talk" /><summary type="html">Summary</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/qcon2019.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/qcon2019.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deterministic and Generalized Framework for Unsupervised Learning with Restricted Boltzmann Machines</title><link href="http://eric-tramel.github.io/tgm2018/" rel="alternate" type="text/html" title="Deterministic and Generalized Framework for Unsupervised Learning with Restricted Boltzmann Machines" /><published>2018-10-01T00:00:00-05:00</published><updated>2018-10-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/tgm2018</id><content type="html" xml:base="http://eric-tramel.github.io/tgm2018/">&lt;h2 id=&quot;popular-summary&quot;&gt;Popular Summary&lt;/h2&gt;
+
+&lt;p&gt;Is it possible to build a machine that teaches itself? How can we grade its proficiency in a learned task? Is it possible to observe what the machine has learned? These are just a few of the open questions in the field of unsupervised machine learning. To help address these questions, we have developed a framework for training, comparing, and analyzing restricted Boltzmann machines (RBMs), an important practical and theoretical building block for deep neural networks.&lt;/p&gt;
+
+&lt;p&gt;An RBM “learns” by employing a joint statistical neural model trained to maximize the correlation between data, external observables, and a set of parameters from which it builds internal representations of those observables. Our framework relies on statistical physics methods as a basis for investigating statistical inference over many interacting variables, a common feature of machine learning models. Specifically, we use the Thouless-Anderson-Palmer formalism from spin-glass theory to approximate the macroscopic behavior of the many simple, widely interacting neurons that comprise an RBM.&lt;/p&gt;
+
+&lt;p&gt;In our numerical experiments, we demonstrate the effective deterministic training of our proposed models and show interesting features of unsupervised learning that could not be directly observed with sampling. We also show how to use our framework to put RBMs to work on more practical tasks, such as cleaning up noisy signals.&lt;/p&gt;
+
+&lt;p&gt;The framework we propose is not only useful for the analysis and inspection of restricted Boltzmann machines, but it also leads to novel practical training techniques and new applications for these unsupervised models.&lt;/p&gt;</content><author><name></name></author><category term="publication" /><category term="publication" /><category term="statistical physics" /><category term="unsupervised learning" /><category term="RBMs" /><summary type="html">Popular Summary</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/tgm2018.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/tgm2018.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Classification and Disease Localization in Histopathology Using Only Global Labels: A Weakly-Supervised Approach</title><link href="http://eric-tramel.github.io/cts2018/" rel="alternate" type="text/html" title="Classification and Disease Localization in Histopathology Using Only Global Labels: A Weakly-Supervised Approach" /><published>2018-02-01T00:00:00-06:00</published><updated>2018-02-01T00:00:00-06:00</updated><id>http://eric-tramel.github.io/cts2018</id><content type="html" xml:base="http://eric-tramel.github.io/cts2018/"></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="histopathology" /><category term="multiple instance learning" /><summary type="html"></summary></entry><entry><title type="html">Robust Detection of Covariate-Treatment Interactions in Clinical Trials</title><link href="http://eric-tramel.github.io/gtc2017/" rel="alternate" type="text/html" title="Robust Detection of Covariate-Treatment Interactions in Clinical Trials" /><published>2017-12-01T00:00:00-06:00</published><updated>2017-12-01T00:00:00-06:00</updated><id>http://eric-tramel.github.io/gtc2017</id><content type="html" xml:base="http://eric-tramel.github.io/gtc2017/"></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="statistics" /><category term="clinical trials" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/gtc2017.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/gtc2017.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Streaming Bayesian Inference: Theoretical Limits and Mini-batch Approximate Message-Passing</title><link href="http://eric-tramel.github.io/mkt2017/" rel="alternate" type="text/html" title="Streaming Bayesian Inference: Theoretical Limits and Mini-batch Approximate Message-Passing" /><published>2017-10-03T00:00:00-05:00</published><updated>2017-10-03T00:00:00-05:00</updated><id>http://eric-tramel.github.io/mkt2017</id><content type="html" xml:base="http://eric-tramel.github.io/mkt2017/"></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="message passing" /><category term="statistical physics" /><category term="bayesian inference" /><summary type="html"></summary></entry><entry><title type="html">Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines</title><link href="http://eric-tramel.github.io/tra2016/" rel="alternate" type="text/html" title="Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines" /><published>2016-08-01T00:00:00-05:00</published><updated>2016-08-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/tra2016</id><content type="html" xml:base="http://eric-tramel.github.io/tra2016/"></content><author><name></name></author><category term="publication" /><category term="talk" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/itwist2016.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/itwist2016.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Nothing to Julia in Minutes</title><link href="http://eric-tramel.github.io/nothingToJulia/" rel="alternate" type="text/html" title="Nothing to Julia in Minutes" /><published>2016-04-06T00:00:00-05:00</published><updated>2016-04-06T00:00:00-05:00</updated><id>http://eric-tramel.github.io/nothingToJulia</id><content type="html" xml:base="http://eric-tramel.github.io/nothingToJulia/">&lt;h1 id=&quot;nothing-to-julia-in-minutes&quot;&gt;Nothing to Julia in Minutes&lt;/h1&gt;
 
 &lt;h2 id=&quot;os-x-command-line-tools&quot;&gt;OS X Command Line Tools&lt;/h2&gt;
 &lt;p&gt;The first step before doing anything else will be to make sure that we have our OS X basic command-lined dev tools. You probably won’t use these tools far into the future, but having these will allow us to bootstrap into the software we want later.&lt;/p&gt;
@@ -20,27 +185,27 @@
 &lt;h3 id=&quot;install&quot;&gt;Install&lt;/h3&gt;
 &lt;p&gt;Run the following command in &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ xcode-select --install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ xcode-select &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;homebrew&quot;&gt;Homebrew&lt;/h2&gt;
-&lt;p&gt;The starting point for managing our installs will be Homebrew. Homebrew is a &lt;br /&gt;
+&lt;p&gt;The starting point for managing our installs will be Homebrew. Homebrew is a 
 great tool for finding, installing, and upgrading open source tools on OS X.&lt;/p&gt;
 
 &lt;h3 id=&quot;install-1&quot;&gt;Install&lt;/h3&gt;
-&lt;p&gt;The easiest way to install this is via the terminal. Just copy paste the &lt;br /&gt;
+&lt;p&gt;The easiest way to install this is via the terminal. Just copy paste the 
 following into the terminal.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ /usr/bin/ruby -e &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ /usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Subsequently, we’ll need to make sure that everything is updated.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ brew update; brew upgrade;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ brew update; brew upgrade;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The call to &lt;code class=&quot;highlighter-rouge&quot;&gt;update&lt;/code&gt; should make sure that our current list of packages managed by Brew is updated. Subsequently, &lt;code class=&quot;highlighter-rouge&quot;&gt;upgrade&lt;/code&gt; will update all currently installed packages.&lt;/p&gt;
 
@@ -55,528 +220,200 @@ following into the terminal.&lt;/p&gt;
 &lt;p&gt;Double click the DMG and drag &lt;code class=&quot;highlighter-rouge&quot;&gt;Julia-0.4.5.&lt;/code&gt; into your applications folder.&lt;/p&gt;
 
 &lt;h3 id=&quot;running-easy&quot;&gt;Running (Easy)&lt;/h3&gt;
-&lt;p&gt;The easiest thing to do at this point is to double click the &lt;code class=&quot;highlighter-rouge&quot;&gt;Julia-0.4.5.&lt;/code&gt; &lt;br /&gt;
-application. It should open up a REPL window saying something like the following&lt;br /&gt;
+&lt;p&gt;The easiest thing to do at this point is to double click the &lt;code class=&quot;highlighter-rouge&quot;&gt;Julia-0.4.5.&lt;/code&gt; 
+application. It should open up a REPL window saying something like the following
 at the top:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   _       _ _(_)_     |  A fresh approach to technical computing
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;   _       _ _(_)_     |  A fresh approach to technical computing
   (_)     | (_) (_)    |  Documentation: http://docs.julialang.org
    _ _   _| |_  __ _   |  Type &quot;?help&quot; for help.
   | | | | | | |/ _` |  |
   | | |_| | | | (_| |  |  Version 0.4.5 (2016-03-18 00:58 UTC)
- _/ |\__&#39;_|_|_|\__&#39;_|  |  Official http://julialang.org/ release
+ _/ |\__'_|_|_|\__'_|  |  Official http://julialang.org/ release
 |__/                   |  x86_64-apple-darwin13.4.0
 
 julia&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Much like Python and Matlab, Julia ships with an interactive scripting &lt;br /&gt;
-environment which allows you run commands one at a time and investigate the &lt;br /&gt;
+&lt;p&gt;Much like Python and Matlab, Julia ships with an interactive scripting 
+environment which allows you run commands one at a time and investigate the 
 results to your hearts content. Matlab-like options such as &lt;code class=&quot;highlighter-rouge&quot;&gt;whos()&lt;/code&gt; also exist. There are some other advanced features of the REPL that we’ll cover later (such as running bash commands).&lt;/p&gt;
 
 &lt;h2 id=&quot;jupyter&quot;&gt;Jupyter&lt;/h2&gt;
-&lt;p&gt;Jupyter is a visual environment for composing Julia, Python, and R scripts. &lt;br /&gt;
-One can write code in line with figures and TeX text, which makes it a really &lt;br /&gt;
+&lt;p&gt;Jupyter is a visual environment for composing Julia, Python, and R scripts. 
+One can write code in line with figures and TeX text, which makes it a really 
 nice for sharing results back and forth with others as well as for keeping notes for yourself.&lt;/p&gt;
 
 &lt;h3 id=&quot;install-3&quot;&gt;Install&lt;/h3&gt;
 
-&lt;h4 id=&quot;python&quot;&gt;1. &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;We want to make sure that we have a version of Python that we can actually play&lt;br /&gt;
-with. Unfortunately, the one given to us by the OS X devtools does not like to &lt;br /&gt;
-place nice with others. Lets get Python 3  as well as some buildtools &lt;br /&gt;
+&lt;h4 id=&quot;1-python&quot;&gt;1. &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;We want to make sure that we have a version of Python that we can actually play
+with. Unfortunately, the one given to us by the OS X devtools does not like to 
+place nice with others. Lets get Python 3  as well as some buildtools 
 via Homebrew.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ brew install python3
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python3
 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;...build output...&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;jupyter-1&quot;&gt;2. &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter&lt;/code&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;2-jupyter&quot;&gt;2. &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;From here we should be able to use &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3&lt;/code&gt; to install &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ pip3 install jupyter
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jupyter
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
 &lt;p&gt;Now we should have jupyter installed on the system. To run Jupyter and create a notebook from terminal, you should now be able to simply run&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ jupyter notebook
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ jupyter notebook
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;which will open up a browser window to the home directory for Jupyter.&lt;/p&gt;
 
 &lt;h3 id=&quot;julia-kernel-for-jupyter&quot;&gt;Julia Kernel for Jupyter&lt;/h3&gt;
 &lt;p&gt;Since Jupyter is general across a number of different possible languages, we need to configure Jupyter for using our current instally of Julia. To do this, we will open up Julia and install the &lt;a href=&quot;https://github.com/JuliaLang/IJulia.jl&quot;&gt;IJulia.jl&lt;/a&gt; package. We can do this from Julia by running&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;IJulia&quot;)
-julia&amp;gt; Pkg.build(&quot;IJulia&quot;)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IJulia&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IJulia&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;plotting-libraries&quot;&gt;Plotting Libraries&lt;/h2&gt;
 
 &lt;h3 id=&quot;matplotlib&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Certainly one of the most important libraries to install. We can install the Python package &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; and use it in Julia in the following manner. First, lets make sure that we have a copy external to Julia by installing &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;computer-name:~ pip3 install matplotlib
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;computer-name:~ pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;matplotlib
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Next, lets install a couple of packages within Julia to call &lt;code class=&quot;highlighter-rouge&quot;&gt;matplotlib&lt;/code&gt; from within a Julia script.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;PyCall&quot;)
-julia&amp;gt; Pkg.build(&quot;PyCall&quot;)
-julia&amp;gt; Pkg.add(&quot;PyPlot&quot;)
-julia&amp;gt; Pkg.build(&quot;PyPlot&quot;)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PyCall&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PyCall&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PyPlot&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PyPlot&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And voilà, we’re done! Julia has a nice interface for interacting with Python libraries, which we will see in the future.&lt;/p&gt;
 
 &lt;h2 id=&quot;scikit-learn&quot;&gt;Scikit-Learn&lt;/h2&gt;
 &lt;p&gt;We will also be taking advantage of some features of Scikit-Learn, so lets install that as well. Again, we can install Scikit-Learn both exeternally on our system, and also allowing for internal references to the Scikit libraries from within Julia. First, lets install Scikit via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3&lt;/code&gt;…&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    computer-name:~ pip3 install scikit-learn
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;    computer-name:~ pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scikit-learn
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;So now we have a Scikit for use from our Python3 build. But also, lets install a copy for Julia. We will make use of the &lt;a href=&quot;https://github.com/cstjean/ScikitLearn.jl&quot;&gt;ScikitLearn.jl&lt;/a&gt; wrapper to ease calling Scikit funcitons from within Julia (though we could also do this directly via PyCall.jl). To ease some common build problems, we will use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Conda.jl&lt;/code&gt; wrapper of the python Conda package manager to create a Julia-local copy of Scikit-learn. Then we’ll install the wrapper package and be done.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;Conda&quot;)
-julia&amp;gt; Pkg.build(&quot;Conda&quot;)
-julia&amp;gt; Conda.add(&quot;scikit-learn&quot;)
-julia&amp;gt; Pkg.add(&quot;ScikitLearn&quot;)
-julia&amp;gt; Pkg.build(&quot;ScikitLearn&quot;)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Conda&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Conda&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Conda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;scikit-learn&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScikitLearn&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScikitLearn&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We can test to make sure that we have it working via&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; using ScikitLearn
-julia&amp;gt; @sk_import datasets: load_digits
-julia&amp;gt; data = load_digits()
-Dict{Any,Any} with 5 entries:
-  &quot;images&quot;       =&amp;gt; 1797x8x8 Array{Float64,3}:…
-  &quot;target_names&quot; =&amp;gt; [0,1,2,3,4,5,6,7,8,9]
-  &quot;data&quot;         =&amp;gt; 1797x64 Array{Float64,2}:…
-  &quot;DESCR&quot;        =&amp;gt; &quot;Optical Recognition of Handwritten Digits Data Set\n===========================…
-  &quot;target&quot;       =&amp;gt; [0,1,2,3,4,5,6,7,8,9  …  5,4,8,8,4,9,0,8,9,8]
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ScikitLearn&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@sk_import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datasets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_digits&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_digits&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;Dict&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;images&quot;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1797&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x8x8&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Float64&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;…&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;target_names&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;x&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;data&quot;&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1797&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x64&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Float64&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;…&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;DESCR&quot;&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Optical Recognition of Handwritten Digits Data Set&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========================…
+  &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;       =&amp;gt; [0,1,2,3,4,5,6,7,8,9  …  5,4,8,8,4,9,0,8,9,8]
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Lets have some fun and use ASCII Plots to show us an image of some digits&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-julia&quot;&gt;julia&amp;gt; Pkg.add(&quot;ASCIIPlots&quot;)
-julia&amp;gt; using ASCIIPlots
-julia&amp;gt; imagesc(squeeze(data[&quot;images&quot;][1,:,:],1))
+&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ASCIIPlots&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCIIPlots&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imagesc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;squeeze&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;))&lt;/span&gt;
 
 
-        + @## +
-        @#@## @#+
-      + @#+   @##
-      + @#    # #
-      + #     # #
-      + @#  + @##
-      + @#+ # @#
-        # @##
+        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;## +&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#@## @#+&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#+   @##&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#    # #&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#     # #&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#  + @##&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#+ # @#&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;# @##&lt;/span&gt;
 
 
-julia&amp;gt; imagesc(squeeze(data[&quot;images&quot;][8,:,:],1))
+&lt;span class=&quot;n&quot;&gt;julia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imagesc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;squeeze&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;images&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;))&lt;/span&gt;
 
 
-        # # @#@#@#+
-        # # + # @#
-            # @#+
-      + # # @#@##
-      + # @#@#+
-          @##
-        # @#+
-        @##
+        &lt;span class=&quot;c&quot;&gt;# # @#@#@#+&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;# # + # @#&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# @#+&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# # @#@##&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# @#@#+&lt;/span&gt;
+          &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;##&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;# @#+&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;##&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Seems to work!&lt;/p&gt;
-</content>
-<category term="post" />
-<category term="build" />
-<category term="software" />
-<category term="Julia" />
-<category term="Jupyter" />
-<category term="Python" />
-<summary>Nothing to Julia in Minutes</summary>
-</entry>
-<entry>
-<title>Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques</title>
-<link href="http://eric-tramel.github.io/tvg2016/" rel="alternate" type="text/html" title="Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques" />
-<published>2016-01-01T00:00:00-06:00</published>
-<updated>2016-01-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/tvg2016</id>
-<content type="html" xml:base="http://eric-tramel.github.io/tvg2016/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari&lt;/h3&gt;
-&lt;a href=&quot;http://arxiv.org/abs/1409.5557&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://arxiv.org/pdf/1409.5557v1&quot;&gt;[PDF]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;br /&gt;
-&lt;!-- &lt;figcaption class=&quot;caption&quot;&gt;
-caption
-&lt;/figcaption&gt; --&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; These notes review six lectures given by Prof. Andrea Montanari on the topic of statistical estimation for linear models. The first two lectures cover the principles of signal recovery from linear measurements in terms of minimax risk. Subsequent lectures demonstrate the application of these principles to several practical problems in science and engineering. Specifically, these topics include denoising of error-laden signals, recovery of compressively sensed signals, reconstruction of low-rank matrices, and also the discovery of hidden cliques within large networks.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;incollection{tvg2014,
-    Author = {Eric W. Tramel and Santhosh Kumar and Andrei Giurgiu and Andrea Montanari},
-    Booktitle = {Statistical Physics, Optimization, Inference, and Message-Passing Algorithms},
-    Editor = {Florent Krzakala and Federico Ricci-Tersenghi and Lenka Zdeborov\`{a} and Riccardo Zecchina and Eric W. Tramel and Leticia F. Cugliandolo},
-    Pages = {120--177},
-    Publisher = {Oxford University Press},
-    Title = {Statistical Estimation: From Denoising to Sparse Regression and Hidden Cliques},
-    Year = {2015}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="inference" />
-<category term="statistical physics" />
-<category term="machine learning" />
-<category term="belief propagation" />
-<category term="message passing" />
-<summary>Eric W. Tramel, Santhosh Kumar, Andrei Giurgiu, &amp;amp; Andrea Montanari[Link][PDF]</summary>
-</entry>
-<entry>
-<title>Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines</title>
-<link href="http://eric-tramel.github.io/tmc2016/" rel="alternate" type="text/html" title="Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines" />
-<published>2016-01-01T00:00:00-06:00</published>
-<updated>2016-01-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/tmc2016</id>
-<content type="html" xml:base="http://eric-tramel.github.io/tmc2016/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;E. W. Tramel, A. Manoel, F. Caltagirone, M. Gabrié, &amp;amp; F. Krzakala&lt;/h3&gt;
-&lt;a href=&quot;http://arxiv.org/abs/1606.03956&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://arxiv.org/pdf/1606.03956v1.pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;
-(Left) CS reconstruction performance over first 1,000 digit images from the MNIST test partition. Results for non-i.i.d. AMP, support-based BRBM-AMP, and GRBM-AMP are on the left, center, and right, respectively. The \(M = K\) oracle support transition is indicated by the black dotted line, and the spinodal transition [Krzakala et al. 2012] by the solid one. Top: Average reconstruction accuracy in MSE measured in dB. Bottom: Average reconstruction correlation with original digit image. (Right) Visual comparison of reconstructions for a single digit image \((\rho = 0.25)\) for small values of \(\alpha\).
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; In this work, we consider compressed sensing reconstruction from (M) measurements of (K)-sparse structured signals which do not possess a writable correlation model. Assuming that a generative statistical model, such as a Boltzmann machine, can be trained in an unsupervised manner on example signals, we demonstrate how this signal model can be used within a Bayesian framework of signal reconstruction. By deriving a message-passing inference for general distribution restricted Boltzmann machines, we are able to integrate these inferred signal models into approximate message passing for compressed sensing reconstruction. Finally, we show for the MNIST dataset that this approach can be very effective, even for (M&amp;lt;K).&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{tdk2016,
-    Author = {Eric W. Tramel and Andre Manoel and Francesco Caltagirone and Marylou Gabri{\&#39;e} and Florent Krzakala},
-    Journal = {Proc. IEEE Info. Theory Workshop},
-    Title = Inferring Sparsity: Compressed Sensing using Generalized Restricted {B}oltzmann Machines},
-    Year = {2016}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="inverse problems" />
-<category term="boltzmann machines" />
-<category term="unsupervised learning" />
-<category term="inference" />
-<category term="approximate message passing" />
-<category term="machine learning" />
-<summary>E. W. Tramel, A. Manoel, F. Caltagirone, M. Gabrié, &amp;amp; F. Krzakala[Link][PDF]</summary>
-</entry>
-<entry>
-<title>Approximate Message Passing with Restricted Boltzmann Machine Priors</title>
-<link href="http://eric-tramel.github.io/tdk2016/" rel="alternate" type="text/html" title="Approximate Message Passing with Restricted Boltzmann Machine Priors" />
-<published>2016-01-01T00:00:00-06:00</published>
-<updated>2016-01-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/tdk2016</id>
-<content type="html" xml:base="http://eric-tramel.github.io/tdk2016/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Eric W. Tramel, Angélique Drémeau, and Florent Krzakala&lt;/h3&gt;
-&lt;a href=&quot;http://arxiv.org/abs/1502.06470&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://arxiv.org/pdf/1502.06470v3&quot;&gt;[PDF]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;
-Visual comparison of reconstructions for four test digits across \(\alpha\) for the same experimental settings. The rows of each box, from top to bottom, correspond to the reconstructions providied by i.i.d. AMP-GB, non-i.i.d. AMP-GB, the proposed approach with NMF RBM factorization, and the proposed approach with TAP RBM factorization, respectively. The columns of each box, from left to right, represent the values \(\alpha = 0.025, 0.074, 0.123, 0.172, 0.222, 0.271, 0.320, 0.369, 0.418, 0.467\). The advantages provided by the proposed approach are clearly seen by comparing the last row to the first one. The digits shown have \(\rho = 0.342\) (top left), \(\rho = 0.268\) (bottom left), \(\rho = 0.214\) (top right), and \(\rho = 0.162\) (bottom right). The vertical blue line represents the \(\alpha = \rho\) oracle exact-reconstruction boundary for each reconstruction task.
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Approximate Message Passing (AMP) has been shown to be an excellent statistical approach to signal inference and compressed sensing problem. The AMP framework provides modularity in the choice of signal prior; here we propose a hierarchical form of the Gauss-Bernouilli prior which utilizes a Restricted Boltzmann Machine (RBM) trained on the signal support to push reconstruction performance beyond that of simple iid priors for signals whose support can be well represented by a trained binary RBM. We present and analyze two methods of RBM factorization and demonstrate how these affect signal reconstruction performance within our proposed algorithm. Finally, using the MNIST handwritten digit dataset, we show experimentally that using an RBM allows AMP to approach oracle-support performance.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;article{tdk2016,
-    Author = {Eric W. Tramel and Ang{\&#39;e}lique Dr{\&#39;e}meau and Florent Krzakala},
-    Journal = {Journal of Statistical Mechanics: Theory and Experiment},
-    Title = {Approximate Message Passing with Restricted {B}oltzmann Machine Priors},
-    Year = {2016}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="inverse problems" />
-<category term="boltzmann machines" />
-<category term="unsupervised learning" />
-<category term="inference" />
-<category term="approximate message passing" />
-<category term="machine learning" />
-<summary>Eric W. Tramel, Angélique Drémeau, and Florent Krzakala[Link][PDF]</summary>
-</entry>
-<entry>
-<title>Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System</title>
-<link href="http://eric-tramel.github.io/rtg2016/" rel="alternate" type="text/html" title="Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System" />
-<published>2016-01-01T00:00:00-06:00</published>
-<updated>2016-01-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/rtg2016</id>
-<content type="html" xml:base="http://eric-tramel.github.io/rtg2016/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Boshra Rajaei, Eric W. Tramel, Sylvain Gigan, Florent Krzakala, &amp;amp; Laurent Daudet&lt;/h3&gt;
-&lt;a href=&quot;http://arxiv.org/abs/1510.01098&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://arxiv.org/pdf/1510.01098v2.pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;Experimental setup of the imager, from [9]. A monochromatic laser at 532 nm is expanded by a telescope and illuminates an SLM, here, a Texas Instruments DLP9500 DMD with \(1920\times 1080\) pixels. The light beam carrying the image is then focused on a random medium by means of a microscope lens. Here, the medium is a thick (several tens of microns) opaque layer of Zinc Oxide nanoparticles deposited on a glass slide. The transmitted light is collected on the far side by a second lens, passes through a polarizer, and is detected by an AVT PIKE F-100 monochrome CCD camera. Note that the DMD is only for calibration and display and is not part of the imager itself.
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Reconstruction of images from noisy linear measurements is a core problem in image processing, for which convex optimization methods based on total variation (TV) minimization have been the long-standing state-of-the-art. We present an alternative probabilistic reconstruction procedure based on approximate message-passing, Scampi, which operates in the compressive regime, where the inverse imaging problem is underdetermined. While the proposed method is related to the recently proposed GrAMPA algorithm of Borgerding, Schniter, and Rangan, we further develop the probabilistic approach to compressive imaging by introducing an expectation-maximization learning of model parameters, making the Scampi robust to model uncertainties. Additionally, our numerical experiments indicate that Scampi can provide reconstruction performance superior to both GrAMPA as well as convex approaches to TV reconstruction. Finally, through exhaustive best-case experiments, we show that in many cases the maximal performance of both Scampi and convex TV can be quite close, even though the approaches are a prori distinct. The theoretical reasons for this correspondence remain an open question. Nevertheless, the proposed algorithm remains more practical, as it requires far less parameter tuning to perform optimally.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conference{btg2016,
-    Author = {Boshra Rajaei and Eric W. Tramel and Sylvain Gigan and Florent Krzakala and Laurent Daudet},
-    Booktitle = {Proc. {IEEE} Int. Conf. on Acoustics, Speech and Signal Processing (ICASSP)},
-    Title = {Intensity-only Optical Compressive Imaging Using a Multiply Scattering Material: A Double Phase Retrieval System},
-    Year = {2016}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="imaging" />
-<category term="phase retrieval" />
-<category term="approximate message passing" />
-<category term="optics" />
-<category term="physical experiment" />
-<summary>Boshra Rajaei, Eric W. Tramel, Sylvain Gigan, Florent Krzakala, &amp;amp; Laurent Daudet[Link][PDF]</summary>
-</entry>
-<entry>
-<title>Statistical Physics, Optimization, Inference, and Message-Passing Algorithms</title>
-<link href="http://eric-tramel.github.io/krz2016/" rel="alternate" type="text/html" title="Statistical Physics, Optimization, Inference, and Message-Passing Algorithms" />
-<published>2016-01-01T00:00:00-06:00</published>
-<updated>2016-01-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/krz2016</id>
-<content type="html" xml:base="http://eric-tramel.github.io/krz2016/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Florent Krzakala, Federico Ricci-Tersenghi, Lenka Zdeborová, Riccardo Zecchina, Eric W. Tramel, &amp;amp; Leticia F. Cugliandolo&lt;/h3&gt;
-&lt;a href=&quot;https://global.oup.com/academic/product/statistical-physics-optimization-inference-and-message-passing-algorithms-9780198743736?cc=fr&amp;amp;lang=en&amp;amp;&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://www.lps.ens.fr/~krzakala/LESHOUCHES2013/book.htm&quot;&gt;[Chapter PDFs]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;br /&gt;
-&lt;!-- &lt;figcaption class=&quot;caption&quot;&gt;
-caption
-&lt;/figcaption&gt; --&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; In the last decade, there have been an increasing convergence of interest and methods between theoretical physics and fields as diverse as probability, machine learning, optimization and compressed sensing. In particular, many theoretical and applied works in statistical physics and computer science have relied on the use of message passing algorithms and their connection to statistical physics of spin glasses. The aim of this book, especially adapted to PhD students, post-docs, and young researchers, is to present the background necessary for entering this fast developing field.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;book{krz2016,
-    Author = {Florent Krzakala and Federico Ricci-Tersenghi and Lenka Zdeborov\`{a} and Riccardo Zecchina and Eric W. Tramel and Leticia F. Cugliandolo},
-    Publisher = {Oxford University Press},
-    Title = {Statistical Physics, Optimization, Inference, and Message-Passing Algorithms},
-    Year = {2016}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="inference" />
-<category term="statistical physics" />
-<category term="machine learning" />
-<category term="belief propagation" />
-<category term="optimization" />
-<summary>Florent Krzakala, Federico Ricci-Tersenghi, Lenka Zdeborová, Riccardo Zecchina, Eric W. Tramel, &amp;amp; Leticia F. Cugliandolo[Link][Chapter PDFs]</summary>
-</entry>
-<entry>
-<title>Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging</title>
-<link href="http://eric-tramel.github.io/btk2015/" rel="alternate" type="text/html" title="Scampi: A Robust Approximate Message-Passing Framework for Compressive Imaging" />
-<published>2015-12-15T00:00:00-06:00</published>
-<updated>2015-12-15T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/btk2015</id>
-<content type="html" xml:base="http://eric-tramel.github.io/btk2015/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Jean Barbier, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
-&lt;a href=&quot;http://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013/pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;a href=&quot;https://github.com/jeanbarbier/scampi&quot;&gt;[Code]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;Visual comparison for some \(512 \times 512\) images: a zoom on the original image (left) is compared with the Scampi (center) and GrAMPA (right) reconstructions for different settings, all with a fixed SNIPE prior parameter \(\omega = 0\). From top to bottom are peppers at \(\alpha =0.1\) for an ISNR of 20dB, Lena at \(\alpha =0.5\) for an ISNR of 40dB, Barbara at \(\alpha =0.5\) for an ISNR of 30dB and &lt;i&gt;phantom&lt;/i&gt; at \(\alpha =0.1\) for an ISNR of 20dB.
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Reconstruction of images from noisy linear measurements is a core problem in image processing, for which convex optimization methods based on total variation (TV) minimization have been the long-standing state-of-the-art. We present an alternative probabilistic reconstruction procedure based on approximate message-passing, Scampi, which operates in the compressive regime, where the inverse imaging problem is underdetermined. While the proposed method is related to the recently proposed GrAMPA algorithm of Borgerding, Schniter, and Rangan, we further develop the probabilistic approach to compressive imaging by introducing an expectation-maximization learning of model parameters, making the Scampi robust to model uncertainties. Additionally, our numerical experiments indicate that Scampi can provide reconstruction performance superior to both GrAMPA as well as convex approaches to TV reconstruction. Finally, through exhaustive best-case experiments, we show that in many cases the maximal performance of both Scampi and convex TV can be quite close, even though the approaches are a prori distinct. The theoretical reasons for this correspondence remain an open question. Nevertheless, the proposed algorithm remains more practical, as it requires far less parameter tuning to perform optimally.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conference{btk2015,
-    Author = {Jean Barbier and Eric W. Tramel and Florent Krzakala},
-    Booktitle = {Proc. Int. Mtg. on High-Dimensional Data Driven Science (HD\textasciicircum 3)},
-    Title = {Scampi: a robust approximate message-passing framework for compressive imaging},
-    Year = {2015}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="imaging" />
-<category term="inverse problems" />
-<category term="approximate message passing" />
-<summary>Jean Barbier, Eric W. Tramel, &amp;amp; Florent Krzakala[Link][PDF][Code]</summary>
-</entry>
-<entry>
-<title>Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy</title>
-<link href="http://eric-tramel.github.io/gtk2015/" rel="alternate" type="text/html" title="Training Restricted Boltzmann Machines via the Thouless-Anderson-Palmer Free Energy" />
-<published>2015-12-01T00:00:00-06:00</published>
-<updated>2015-12-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/gtk2015</id>
-<content type="html" xml:base="http://eric-tramel.github.io/gtk2015/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Marylou Gabrié, Eric W. Tramel, &amp;amp; Florent Krzakala&lt;/h3&gt;
-&lt;a href=&quot;http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy.pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;a href=&quot;http://github.com/sphinxteam/Boltzmann.jl&quot;&gt;[Code]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;Estimates of the per-sample log-likelihood over the MNIST test set, normalized by the total number of units, as a function of the number of training epochs. The results for the different training algorithms are plotted in different colors with the same color code used for both panels. &lt;b&gt;Left panel:&lt;/b&gt; Pseudo log-likelihood estimate. The difference between EMF algorithms and contrastive divergence algorithms is minimal. &lt;b&gt;Right panel:&lt;/b&gt; EMF log-likelihood estimate at 2nd order. The improvement from MF to TAP is clear. Perhaps reasonably, TAP demonstrates an advantage over CD and PCD. Notice how the second-order EMF approximation of L provides less noisy estimates, at a lower computational cost.&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Restricted Boltzmann machines are undirected neural networks which have been shown tobe effective in many applications, including serving as initializations fortraining deep multi-layer neural networks. One of the main reasons for their success is the existence of efficient and practical stochastic algorithms, such as contrastive divergence,for unsupervised training. We propose an alternative deterministic iterative procedure based on an improved mean field method from statistical physics known as the Thouless-Anderson-Palmer approach. We demonstrate that our algorithm provides performance equal to, and sometimes superior to, persistent contrastive divergence, while also providing a clear and easy to evaluate objective function. We believe that this strategycan be easily generalized to other models as well as to more accurate higher-order approximations, paving the way for systematic improvements in training Boltzmann machines with hidden units.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    conference{GTZ2015,
-        Address = {Montreal, Canada},
-        Author = {Marylou Gabri{\&#39;e} and Eric W. Tramel and Florent Krzakala},
-        Booktitle = {Proc. Conf. on Neural Info. Processing Sys. (NIPS)},
-        Month = {June},
-        Title = {Training Restricted {B}oltzmann Machines via the {Thouless-Andreson-Palmer} Free Energy},
-        Year = {2015}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="unsupervised learning" />
-<category term="boltzmann machines" />
-<category term="machine learning" />
-<summary>Marylou Gabrié, Eric W. Tramel, &amp;amp; Florent Krzakala[Link][PDF][Code]</summary>
-</entry>
-<entry>
-<title>Sparse Estimation with the Swept Approximated Message-Passing Algorithm</title>
-<link href="http://eric-tramel.github.io/mkt2015/" rel="alternate" type="text/html" title="Sparse Estimation with the Swept Approximated Message-Passing Algorithm" />
-<published>2015-07-07T00:00:00-05:00</published>
-<updated>2015-07-07T00:00:00-05:00</updated>
-<id>http://eric-tramel.github.io/mkt2015</id>
-<content type="html" xml:base="http://eric-tramel.github.io/mkt2015/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Andre Manoel, Eric W. Tramel, Florent Krzakala, &amp;amp; Lenka Zdeborová&lt;/h3&gt;
-&lt;a href=&quot;http://machinelearning.wustl.edu/mlpapers/papers/icml2015_manoel15&quot;&gt;[Link]&lt;/a&gt;
-&lt;a href=&quot;http://machinelearning.wustl.edu/mlpapers/paper_files/icml2015_manoel15.pdf&quot;&gt;[PDF]&lt;/a&gt;
-&lt;a href=&quot;https://github.com/eric-tramel/SwAMP-Demo&quot;&gt;[Code]&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;/p&gt;
-&lt;figcaption class=&quot;caption&quot;&gt;
-At the top, convergence behavior of AMP and
-SwAMP are compared for CS signal reconstruction for correlated sensing matrices on sparse signals of size \(N = 10^4\) and sparsity \(\rho = 0.2\) with noise variance \(\Delta = 10^{−8}\). The projec- tors have been created according to (30) and are rank-deficient for \(\eta &amp;lt; \alpha = 0.6\). At the bottom, a comparison between log- scale average reconstruction MSE obtained by SwAMP , BPDN, adaptive Lasso, and \(\ell_p\) regularization is given for signals of size \(N = 1024\) for \(\Delta=10−8\), \(\rho=0.2\),and \(\alpha=0.6\).
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Approximate Message Passing (AMP) has been shown to be a superior method for inference problems, such as the recovery of signals from sets of noisy, lower-dimensionality measurements, both in terms of reconstruction accuracy and in computational efficiency. However, AMP suffers from serious convergence issues in contexts that do not exactly match its assumptions. We propose a new approach to stabilizing AMP in these contexts by applying AMP updates to individual coefficients rather than in parallel. Our results show that this change to the AMP iteration can provide expected, but hitherto unobtainable, performance for problems on which the standard AMP iteration diverges. Additionally, we find that the computational costs of this &lt;em&gt;swept&lt;/em&gt; coefficient update scheme is not unduly burden- some, allowing it to be applied efficiently to signals of large dimensionality.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conference{mtk2015,
-    Address = {Lille, France},
-    Author = {Andre Manoel and Eric W. Tramel and Florent Krzakala and Lenka Zdeborov\&#39;{a}},
-    Booktitle = {Proc. Int. Conf. on Machine Learning (ICML)},
-    Month = {July},
-    Title = {Sparse Estimation with the Swept Approximated Message-Passing Algorithm},
-    Year = {2015}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="statistical inference" />
-<category term="approximate message passing" />
-<category term="signal processing" />
-<category term="linear regression" />
-<category term="logistic regression" />
-<summary>Andre Manoel, Eric W. Tramel, Florent Krzakala, &amp;amp; Lenka Zdeborová[Link][PDF][Code]</summary>
-</entry>
-<entry>
-<title>Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators</title>
-<link href="http://eric-tramel.github.io/mtt2015/" rel="alternate" type="text/html" title="Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators" />
-<published>2015-01-01T00:00:00-06:00</published>
-<updated>2015-01-01T00:00:00-06:00</updated>
-<id>http://eric-tramel.github.io/mtt2015</id>
-<content type="html" xml:base="http://eric-tramel.github.io/mtt2015/">&lt;div align=&quot;center&quot;&gt;
-&lt;h3&gt;Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel&lt;/h3&gt;
-&lt;a href=&quot;http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&amp;amp;Sect2=HITOFF&amp;amp;p=1&amp;amp;u=/netahtml/PTO/search-bool.html&amp;amp;r=1&amp;amp;f=G&amp;amp;l=50&amp;amp;d=PALL&amp;amp;RefSrch=yes&amp;amp;Query=PN/9160900&quot;&gt;[Link]&lt;/a&gt;
-&lt;!-- &lt;a href=&quot;http://&quot;&gt;[PDF]&lt;/a&gt; --&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;{{ page.img }}&quot; alt=&quot;Main Figure&quot; /&gt;&lt;br /&gt;
-&lt;!-- &lt;figcaption class=&quot;caption&quot;&gt;
-caption
-&lt;/figcaption&gt; --&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Abstract —&lt;/em&gt;&lt;/strong&gt; Systems and methods for capturing light field information including spatial and angular information using an image pickup device that includes an image sensor and at least one spatial light modulator (SLM) take multiple captures of a scene using the at least one SLM to obtain coded projections of a light field of the scene, wherein each capture is taken using at least one pattern on the at least one SLM, and recover light field data using a reconstruction process on the obtained coded projections of the light field.&lt;/p&gt;
-
-&lt;h3 id=&quot;bibtex-record&quot;&gt;BibTeX Record&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;patent{MTT2015,
-    Address = {Tokyo, Japan},
-    Assignee = {Canon Kabushiki Kaisha},
-    Author = {Ankit Mohan and Siu-Kei Tin and Eric W. Tramel},
-    Dayfiled = {29},
-    Language = {English},
-    Monthfiled = {Feburary},
-    Nationality = {U.S.},
-    Number = {US9160900 B2},
-    Title = {Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators},
-    Year = {October 13, 2015},
-    Yearfiled = {2012}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</content>
-<category term="publication" />
-<category term="compressed sensing" />
-<category term="lightfield imaging" />
-<summary>Ankit Mohan, Siu-Kei Tin, &amp;amp; Eric W. Tramel[Link]</summary>
-</entry>
-</feed>
+&lt;p&gt;Seems to work!&lt;/p&gt;</content><author><name>erictramel</name></author><category term="blog" /><category term="post" /><category term="build" /><category term="software" /><category term="Julia" /><category term="Jupyter" /><category term="Python" /><summary type="html">Nothing to Julia in Minutes</summary></entry></feed>
