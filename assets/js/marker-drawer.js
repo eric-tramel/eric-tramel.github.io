@@ -31,7 +31,6 @@ class MarkerDrawer {
         this.bindEvents();
         this.setPencilCursor();
         this.createRefreshIcon();
-        this.drawInitialDoodles();
         this.startFadeLoop();
     }
     
