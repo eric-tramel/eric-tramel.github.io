@@ -646,6 +646,12 @@ textarea {
 
 body, html {
   font-size: 68.75%; }
+  @media only screen and (max-width: 400px) {
+    body, html {
+      font-size: 62.5%; } }
+  @media only screen and (min-width: 400px) and (max-width: 1050px) {
+    body, html {
+      font-size: 65%; } }
 
 body {
   line-height: 1.2;
@@ -669,18 +675,36 @@ h1 {
   font-weight: 500;
   transform: rotate(-0.2deg);
   margin-bottom: 1.2em; }
+  @media only screen and (max-width: 400px) {
+    h1 {
+      font-size: 2.2rem; } }
+  @media only screen and (min-width: 400px) and (max-width: 1050px) {
+    h1 {
+      font-size: 2.6rem; } }
 
 h2 {
   font-size: 2.2rem;
   font-weight: 400;
   transform: rotate(0.1deg);
   margin-bottom: 1em; }
+  @media only screen and (max-width: 400px) {
+    h2 {
+      font-size: 1.8rem; } }
+  @media only screen and (min-width: 400px) and (max-width: 1050px) {
+    h2 {
+      font-size: 2rem; } }
 
 h3 {
   font-size: 2rem;
   font-weight: 400;
   transform: rotate(-0.2deg);
   margin-bottom: 0.8em; }
+  @media only screen and (max-width: 400px) {
+    h3 {
+      font-size: 1.6rem; } }
+  @media only screen and (min-width: 400px) and (max-width: 1050px) {
+    h3 {
+      font-size: 1.8rem; } }
 
 h4 {
   font-size: 1.6rem;
@@ -1352,6 +1376,12 @@ pre {
   padding: 2rem 0 1.5rem 0;
   background: linear-gradient(180deg, #d4b896 0%, #c9a876 40%, #c19f6b 100%);
   box-shadow: 0 3px 8px rgba(61, 41, 20, 0.2); }
+  @media only screen and (max-width: 400px) {
+    .nav {
+      padding: 1rem 0 1rem 0; } }
+  @media only screen and (min-width: 400px) and (max-width: 1050px) {
+    .nav {
+      padding: 1.5rem 0 1.25rem 0; } }
   .nav::before {
     content: "";
     position: absolute;
@@ -1371,15 +1401,24 @@ pre {
     @media only screen and (max-width: 400px) {
       .nav > .list {
         width: calc(100% - 2rem);
-        margin: 0 1rem; } }
+        margin: 0 1rem;
+        gap: 1.5rem; } }
     @media only screen and (min-width: 400px) and (max-width: 1050px) {
       .nav > .list {
         width: calc(100% - 3rem);
-        margin: 0 1.5rem; } }
+        margin: 0 1.5rem;
+        gap: 2rem; } }
     .nav > .list .nav-links {
       display: flex;
       gap: 3rem;
       list-style: none; }
+      @media only screen and (max-width: 400px) {
+        .nav > .list .nav-links {
+          gap: 1rem;
+          flex-wrap: wrap; } }
+      @media only screen and (min-width: 400px) and (max-width: 1050px) {
+        .nav > .list .nav-links {
+          gap: 1.5rem; } }
       .nav > .list .nav-links > .item {
         display: inline-block; }
       .nav > .list .nav-links > .item > .link {
@@ -1396,6 +1435,13 @@ pre {
         text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4);
         transform: rotate(-0.3deg);
         transition: all 0.2s ease; }
+        @media only screen and (max-width: 400px) {
+          .nav > .list .nav-links > .item > .link {
+            font-size: 1.1rem;
+            padding: 0.3rem 0; } }
+        @media only screen and (min-width: 400px) and (max-width: 1050px) {
+          .nav > .list .nav-links > .item > .link {
+            font-size: 1.2rem; } }
         .nav > .list .nav-links > .item > .link::after {
           content: "";
           position: absolute;
@@ -1426,6 +1472,12 @@ pre {
       text-transform: uppercase;
       text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3);
       transform: rotate(-0.2deg); }
+      @media only screen and (max-width: 400px) {
+        .nav > .list .nav-name {
+          font-size: 1.3rem; } }
+      @media only screen and (min-width: 400px) and (max-width: 1050px) {
+        .nav > .list .nav-name {
+          font-size: 1.4rem; } }
     .nav > .list .nav-social {
       display: flex;
       gap: 1.5rem;
@@ -2000,6 +2052,48 @@ body:has(.home)::after {
     .company-logo[data-company="NVIDIA"] .logo-text {
       color: #2e3440;
       font-weight: 800; }
+
+#marker-drawer {
+  pointer-events: auto !important;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.refresh-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  cursor: pointer !important;
+  opacity: 0.6;
+  transition: all 0.3s ease; }
+  @media only screen and (max-width: 400px) {
+    .refresh-icon {
+      width: 35px;
+      height: 35px;
+      top: 15px;
+      right: 15px; } }
+  .refresh-icon:hover {
+    opacity: 1;
+    transform: scale(1.1); }
+  .refresh-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #1a365d;
+    transition: all 0.3s ease; }
+    .refresh-icon svg:hover {
+      fill: #2c5282; }
+
+.page.home .nav-links, .page.home .social-links, .page.home .nav-name, .page.home .link, .page.home button, .page.home input, .page.home textarea, .page.home select, .page.home a {
+  pointer-events: auto !important;
+  z-index: 20;
+  position: relative; }
 
     </style>
 
@@ -4301,7 +4395,7 @@ include for a given paper.-->
 </svg>
 
 
-    <!-- Coffee Painter Script - Home Page Only -->
+    <!-- Marker Drawer Script - Home Page Only -->
     
 
 </body>

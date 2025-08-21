@@ -44,8 +44,9 @@ class MarkerDrawer {
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            pointer-events: auto;
             z-index: 1;
+            touch-action: none;
         `;
         
         document.body.appendChild(this.canvas);
@@ -153,24 +154,30 @@ class MarkerDrawer {
     
     bindEvents() {
         // Mouse events
-        document.addEventListener('mousemove', (e) => this.handleMove(e.clientX, e.clientY));
-        document.addEventListener('mousedown', (e) => this.startDrawing(e.clientX, e.clientY));
-        document.addEventListener('mouseup', () => this.stopDrawing());
+        this.canvas.addEventListener('mousemove', (e) => this.handleMove(e.clientX, e.clientY));
+        this.canvas.addEventListener('mousedown', (e) => this.startDrawing(e.clientX, e.clientY));
+        this.canvas.addEventListener('mouseup', () => this.stopDrawing());
         
-        // Touch events for mobile
-        document.addEventListener('touchstart', (e) => {
+        // Touch events for mobile - bind to canvas for better control
+        this.canvas.addEventListener('touchstart', (e) => {
             e.preventDefault();
             const touch = e.touches[0];
             this.startDrawing(touch.clientX, touch.clientY);
         }, { passive: false });
         
-        document.addEventListener('touchmove', (e) => {
+        this.canvas.addEventListener('touchmove', (e) => {
             e.preventDefault();
             const touch = e.touches[0];
             this.handleMove(touch.clientX, touch.clientY);
         }, { passive: false });
         
-        document.addEventListener('touchend', () => this.stopDrawing());
+        this.canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            this.stopDrawing();
+        }, { passive: false });
+        
+        // Also handle global mouse events for when mouse leaves canvas
+        document.addEventListener('mouseup', () => this.stopDrawing());
     }
     
     startDrawing(x, y) {
