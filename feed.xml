@@ -1,185 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" /><updated>2025-08-20T23:32:17-04:00</updated><id>http://eric-tramel.github.io/feed.xml</id><title type="html">Eric W. Tramel, Ph.D.</title><entry><title type="html">Site Refresh, 2019</title><link href="http://eric-tramel.github.io/SiteRefresh/" rel="alternate" type="text/html" title="Site Refresh, 2019" /><published>2019-12-26T00:00:00-05:00</published><updated>2019-12-26T00:00:00-05:00</updated><id>http://eric-tramel.github.io/SiteRefresh</id><content type="html" xml:base="http://eric-tramel.github.io/SiteRefresh/"><![CDATA[<p>It has come time, <strong>once again</strong>, to revisit the personal site. Now, with a few 
-more years of experience, and some more time for the tools to develop, it seems
-a nice time to refresh the content, make sure things are up to date, and to
-tweak the presentation a bit so that it is more to my liking.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://eric-tramel.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://eric-tramel.github.io/" rel="alternate" type="text/html" /><updated>2025-08-21T00:31:41-04:00</updated><id>http://eric-tramel.github.io/feed.xml</id><title type="html">Eric W. Tramel, Ph.D.</title><entry><title type="html">Generating Zero-Shot Hard-Case Hallucinations: A Synthetic and Open Data Approach</title><link href="http://eric-tramel.github.io/generating-zero-shot-hard-case-hallucinations-databricks/" rel="alternate" type="text/html" title="Generating Zero-Shot Hard-Case Hallucinations: A Synthetic and Open Data Approach" /><published>2025-06-10T00:00:00-04:00</published><updated>2025-06-10T00:00:00-04:00</updated><id>http://eric-tramel.github.io/generating-zero-shot-hard-case-hallucinations-databricks</id><content type="html" xml:base="http://eric-tramel.github.io/generating-zero-shot-hard-case-hallucinations-databricks/"><![CDATA[<h2 id="talk-details">Talk Details</h2>
 
-<h2 id="todos">TODOS</h2>
+<p><strong>Type:</strong> Lightning Talk (20 minutes)<br />
+<strong>Track:</strong> Artificial Intelligence<br />
+<strong>Skill Level:</strong> Intermediate<br />
+<strong>Date:</strong> Tuesday, June 10, 2025<br />
+<strong>Time:</strong> 5:20 pm - 5:40 pm<br />
+<strong>Location:</strong> In Person, San Francisco</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Finish converting codeblocks to Nord theme (finish the SASS)</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Fix codeblock border</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Convert site color scheme into Nord.</li>
-  <li class="task-list-item"><del>[ ] Figure out why SASS won’t accept variables imported from SCSS?</del></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Get code blocks centered</li>
-  <li class="task-list-item"><del>[ ] Figure out why Jekyll/Kramdown is not converting fence blocks and only relying on Liquid-defined code blocks.</del></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Fix MathJax header script to use the right AMS formatting.</li>
+<p><strong>Technologies:</strong> AI/BI, Llama, PyTorch</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This lightning talk presents a novel framework for designing and inducing controlled hallucinations in long-form content generation by Large Language Models (LLMs) across diverse domains. The primary purpose is to create fully-synthetic benchmarks and mine hard cases for iterative refinement of zero-shot hallucination detectors.</p>
+
+<h2 id="key-methodology">Key Methodology</h2>
+
+<ul>
+  <li><strong>Synthetic Data Generation:</strong> Use Gretel Data Designer to create long-context datasets</li>
+  <li><strong>Question-Answer Generation:</strong> Generate pairs using chain-of-thought approach</li>
+  <li><strong>Quality Filtering:</strong> Apply consensus labeling to filter synthetic examples</li>
+  <li><strong>Automated Hallucination System:</strong> Create an automated framework for generating controlled hallucinations</li>
 </ul>
 
-<h2 id="building--previewing-site">Building &amp; Previewing Site</h2>
+<h2 id="about-databricks-data--ai-summit">About Databricks Data + AI Summit</h2>
 
-<p>I ran into a big barrier on Day 1 of this expedition: I simply <em>could not</em> get
-a working version of Ruby on my local machine to behave and build the site. There
-were many version conflicts, and then my Brew-installed Ruby was fighting and 
-conflicting with the MacOS system Ruby, and Gems were getting installed in 
-unknown locations, etc.</p>
-
-<p>To overcome this, I went with a docker solution. Specifically, running the 
-<code class="language-plaintext highlighter-rouge">jekyll/builder</code> image with the right ports exposed.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>path/to/repo
-<span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="se">\</span>
- <span class="nt">--publish</span> 35729:35729 <span class="se">\</span>
- <span class="nt">--publish</span><span class="o">=</span>4000:4000 <span class="se">\</span>
- <span class="nt">--volume</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">:/srv/jekyll"</span> <span class="se">\</span>
- <span class="nt">-it</span> jekyll/builder:<span class="nv">$JEKYLL_VERSION</span> <span class="se">\</span>
- jekyll serve <span class="nt">--config</span> _config.yml,_config-dev.yml</code></pre></figure>
-
-<p>I put this together in the new <code class="language-plaintext highlighter-rouge">serve</code> script.</p>
-
-<h2 id="code-blocks">Code Blocks</h2>
-
-<p>One thing that I find myself more particular about these days is the humble
-code block. I want these things to look <em>good</em>, so I’m going to do my best
-to make that happen. I’m going to put down an example code block here
-just for visualization purposes.</p>
-
-<p>I wanted to introduce a Nord-themed syntax highlighting into the site. For this
-I needed to make reference to the <a href="https://github.com/nnooney/jekyll-theme-nn">following repo</a> where
-Nicolas Nooney has already done a great work in implementing the theme as CSS for Rogue/Pygments.
-However, I wasn’t able to get the SCSS-&gt;SASS importing of variables to work
-properly, so I migrated this content into <code class="language-plaintext highlighter-rouge">_sass/base/variables.sass</code> in order
-to make the color settings global to the entire site (and not just to the
-syntax highlighter!)</p>
-
-<p>I make the slight variation on theme theme by going with dark backgrounds,
-instead of white, for legibility. To be able to control the styling of the 
-code block backgrounds, the colors need to be changed within the 
-global SASS, <code class="language-plaintext highlighter-rouge">_sass/base/general.sass</code>.</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">from</span> <span class="n">torch</span> <span class="n">immport</span> <span class="n">nn</span>
-<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
-
-<span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="s">"""A Network
-    
-    A Neural Network that does something.
-    """</span> 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">Net</span><span class="p">,</span> <span class="bp">self</span><span class="p">).</span><span class="n">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">16</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">84</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">84</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="c1"># This is a single line comment
-</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">pool</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">pool</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">x</span>
-
-<span class="n">net</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">Net</span><span class="p">())</span></code></pre></figure>
-
-<h3 id="getting-fence-blocks-to-work">Getting Fence Blocks to Work?</h3>
-
-<p>Somewhere along the way, we have lost the ability to be able
-to get proper syntax highlighting when using markdown code fence
-blocks. This means that one has to use the Liquid notation format
-(which is a big bummer)! So, why are Jekyll and Kramdown not
-working together to process down these fenced code blocks properly?</p>
-
-<p>Notably, the documentation for Jekyll is pretty bad, as well as
-that of Kramdown. So we are left with searching around on the
-internet to see if we can find anything at all to help us answer
-this question. I found <a href="https://github.com/jekyll/jekyll/issues/4619#issuecomment-191267346">this reference</a> in a closed
-issue. Perhaps it will be informative?</p>
-
-<p>After a lot of work, I really couldn’t find the reason why it isn’t playing
-nice. This means that I just can’t use fenced code blocks for the time being :(
-Is this a problem with the Jekyll version? For some reason when running 
-bundler, it insists on an older <code class="language-plaintext highlighter-rouge">jekyll==3.8.5</code>. Perhaps there is some version
-clash going on and I’m missing some patches?</p>
-
-<p>For now, as I want to move on, I’ll use the liquid settings :(</p>
-
-<h2 id="double-checking-math-again">Double Checking Math Again</h2>
-
-<p>Is my math working? I really hope so. For instance, if \(a \in \mathbb{R}\),
-then we can hope for</p>
-
-\[|a| \leq |a+a|.\]
-
-<p>It seems like MathJax is a little bit broken in its original formulation. Specifically,
-it seems like the <code class="language-plaintext highlighter-rouge">\mathbb</code> is not working, but this is probably due to the wrong
-script being used for the MathJaX configuration in the header.</p>
-
-<h2 id="revisiting-publications">Revisiting Publications</h2>
-
-<p>In the original implementation of the site, I used the same <code class="language-plaintext highlighter-rouge">post</code> layout
-for blog posts <em>as well as</em> publication pages. Since most of the publication
-page is boilerplate, this meant a lot of by-hand editing of the individual
-pages to make them conform. This is painful and a bad idea! This is exactly
-why Jekyll has <strong>layouts</strong>.</p>
-
-<p>Honestly, I don’t know why I didn’t do this in the first place. Probably I was
-just too new to the entire process to be able make a good decision about it
-in the first place.</p>
-
-<p>Now the majority of the publication pages are auto-generated from some 
-preamble YAML. It still leaves open the possibility of also including some 
-custom content on each page, which will be included after the abstract if desired.</p>
-
-<p>To be able to do this, I needed to also start using the <code class="language-plaintext highlighter-rouge">category</code> property
-from Jekyll, making sure that these pages are separated out distinctly and 
-handled distinctly from the general blog posts.</p>
-
-<h3 id="adding-more-content">Adding More Content</h3>
-
-<p>Additionally, I had a number of works to include into the list since the 
-last time I refreshed the publication list in 2016. Finally, I also have tried
-to do my best to dig up all of the slides, presentations, papers, etc. that I
-could for these different works. My hope is that this page can serve to finally
-tie up all of these loose ends. If not for anyone else, then at least for 
-<em>myself</em>. Honestly, it is hard to be able to dig up my own content to be 
-able to refer back to later!</p>
-
-<h2 id="nord-theme--sass">Nord Theme &amp; SASS</h2>
-
-<p>This time around, I have spent <em>a lot</em> of time with the SASS/SCSS of the site.
-Previously, I never touched this stuff. Especially back in 2016, when the entire
-formatting ran off of CSS, it seemed just a nightmare to be able to dig into.
-Especially for me as a front-end neophyte.</p>
-
-<p>However, with the more recent inclusion of SASS support into Jekyll, it has been
-a little bit fun, actually, to learn more about CSS and how to format content
-properly. I also have grown to appreciate the SASS structure layout that the
-Indigo theme authors put together.</p>]]></content><author><name>erictramel</name></author><category term="blog" /><category term="post" /><category term="site" /><summary type="html"><![CDATA[Refreshing the personal site after a few years.]]></summary></entry><entry><title type="html">Efficient Per-Example Gradient Computations in Convolutional Neural Networks</title><link href="http://eric-tramel.github.io/rmt2019/" rel="alternate" type="text/html" title="Efficient Per-Example Gradient Computations in Convolutional Neural Networks" /><published>2019-12-12T00:00:00-05:00</published><updated>2019-12-12T00:00:00-05:00</updated><id>http://eric-tramel.github.io/rmt2019</id><content type="html" xml:base="http://eric-tramel.github.io/rmt2019/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="ppml" /><category term="engineering" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">ToxicBlend: Virtual Screening of Toxic Compounds with Ensemble Predictors</title><link href="http://eric-tramel.github.io/zjt2019/" rel="alternate" type="text/html" title="ToxicBlend: Virtual Screening of Toxic Compounds with Ensemble Predictors" /><published>2019-05-01T00:00:00-04:00</published><updated>2019-05-01T00:00:00-04:00</updated><id>http://eric-tramel.github.io/zjt2019</id><content type="html" xml:base="http://eric-tramel.github.io/zjt2019/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="ensemble predictors" /><category term="toxicology" /><category term="drug discovery" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Federated Learning: Rewards &amp;amp; Challenges of Distributed Private ML</title><link href="http://eric-tramel.github.io/tra2019/" rel="alternate" type="text/html" title="Federated Learning: Rewards &amp;amp; Challenges of Distributed Private ML" /><published>2019-05-01T00:00:00-04:00</published><updated>2019-05-01T00:00:00-04:00</updated><id>http://eric-tramel.github.io/tra2019</id><content type="html" xml:base="http://eric-tramel.github.io/tra2019/"><![CDATA[<h2 id="summary">Summary</h2>
-
-<p>I discuss the basic concepts underlying the federated ML approach, the advantages it brings, as well as the challenges associated with constructing federated solutions.</p>
-
-<h2 id="about-qconai">About Qcon.ai</h2>
-
-<p>QCon.ai is a practical AI and machine learning conference bringing together software teams working on all aspects of AI and machine learning.</p>]]></content><author><name></name></author><category term="publication" /><category term="talk" /><summary type="html"><![CDATA[Summary]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/qcon2019.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/qcon2019.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">(Panelist) Federated Learning: ML with Privacy on the Edge</title><link href="http://eric-tramel.github.io/tra2018/" rel="alternate" type="text/html" title="(Panelist) Federated Learning: ML with Privacy on the Edge" /><published>2018-11-01T00:00:00-04:00</published><updated>2018-11-01T00:00:00-04:00</updated><id>http://eric-tramel.github.io/tra2018</id><content type="html" xml:base="http://eric-tramel.github.io/tra2018/"><![CDATA[<h2 id="invited-panelist">Invited Panelist</h2>
-
-<p>I was an invited panelist for this webinar put on by Cloudera’s Fast Forward Labs,
-alongside Virginia Smith (CMU), and Andrew Trask (OpenMined, Deepmind, Oxford).
-I talked a bit about the specific challenges involved in the application of 
-federated learning in the health industry.</p>]]></content><author><name></name></author><category term="publication" /><category term="talk" /><summary type="html"><![CDATA[Invited Panelist]]></summary></entry><entry><title type="html">Deterministic and Generalized Framework for Unsupervised Learning with Restricted Boltzmann Machines</title><link href="http://eric-tramel.github.io/tgm2018/" rel="alternate" type="text/html" title="Deterministic and Generalized Framework for Unsupervised Learning with Restricted Boltzmann Machines" /><published>2018-10-01T00:00:00-04:00</published><updated>2018-10-01T00:00:00-04:00</updated><id>http://eric-tramel.github.io/tgm2018</id><content type="html" xml:base="http://eric-tramel.github.io/tgm2018/"><![CDATA[<h2 id="popular-summary">Popular Summary</h2>
-
-<p>Is it possible to build a machine that teaches itself? How can we grade its proficiency in a learned task? Is it possible to observe what the machine has learned? These are just a few of the open questions in the field of unsupervised machine learning. To help address these questions, we have developed a framework for training, comparing, and analyzing restricted Boltzmann machines (RBMs), an important practical and theoretical building block for deep neural networks.</p>
-
-<p>An RBM “learns” by employing a joint statistical neural model trained to maximize the correlation between data, external observables, and a set of parameters from which it builds internal representations of those observables. Our framework relies on statistical physics methods as a basis for investigating statistical inference over many interacting variables, a common feature of machine learning models. Specifically, we use the Thouless-Anderson-Palmer formalism from spin-glass theory to approximate the macroscopic behavior of the many simple, widely interacting neurons that comprise an RBM.</p>
-
-<p>In our numerical experiments, we demonstrate the effective deterministic training of our proposed models and show interesting features of unsupervised learning that could not be directly observed with sampling. We also show how to use our framework to put RBMs to work on more practical tasks, such as cleaning up noisy signals.</p>
-
-<p>The framework we propose is not only useful for the analysis and inspection of restricted Boltzmann machines, but it also leads to novel practical training techniques and new applications for these unsupervised models.</p>]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="statistical physics" /><category term="unsupervised learning" /><category term="RBMs" /><summary type="html"><![CDATA[Popular Summary]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/tgm2018.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/tgm2018.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Classification and Disease Localization in Histopathology Using Only Global Labels: A Weakly-Supervised Approach</title><link href="http://eric-tramel.github.io/cts2018/" rel="alternate" type="text/html" title="Classification and Disease Localization in Histopathology Using Only Global Labels: A Weakly-Supervised Approach" /><published>2018-02-01T00:00:00-05:00</published><updated>2018-02-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/cts2018</id><content type="html" xml:base="http://eric-tramel.github.io/cts2018/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="histopathology" /><category term="multiple instance learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Robust Detection of Covariate-Treatment Interactions in Clinical Trials</title><link href="http://eric-tramel.github.io/gtc2017/" rel="alternate" type="text/html" title="Robust Detection of Covariate-Treatment Interactions in Clinical Trials" /><published>2017-12-01T00:00:00-05:00</published><updated>2017-12-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/gtc2017</id><content type="html" xml:base="http://eric-tramel.github.io/gtc2017/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="statistics" /><category term="clinical trials" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/gtc2017.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/gtc2017.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Streaming Bayesian Inference: Theoretical Limits and Mini-batch Approximate Message-Passing</title><link href="http://eric-tramel.github.io/mkt2017/" rel="alternate" type="text/html" title="Streaming Bayesian Inference: Theoretical Limits and Mini-batch Approximate Message-Passing" /><published>2017-10-03T00:00:00-04:00</published><updated>2017-10-03T00:00:00-04:00</updated><id>http://eric-tramel.github.io/mkt2017</id><content type="html" xml:base="http://eric-tramel.github.io/mkt2017/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="message passing" /><category term="statistical physics" /><category term="bayesian inference" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines</title><link href="http://eric-tramel.github.io/tra2016/" rel="alternate" type="text/html" title="Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines" /><published>2016-08-01T00:00:00-04:00</published><updated>2016-08-01T00:00:00-04:00</updated><id>http://eric-tramel.github.io/tra2016</id><content type="html" xml:base="http://eric-tramel.github.io/tra2016/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="talk" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://eric-tramel.github.io/assets/images/itwist2016.png" /><media:content medium="image" url="http://eric-tramel.github.io/assets/images/itwist2016.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>The Databricks Data + AI Summit is the world’s largest data and AI conference, bringing together thousands of data practitioners, engineers, and leaders to share the latest innovations in data and AI.</p>]]></content><author><name></name></author><category term="publication" /><category term="talk" /><category term="machine learning" /><category term="hallucination detection" /><category term="synthetic data" /><summary type="html"><![CDATA[Talk Details]]></summary></entry><entry><title type="html">Digital twin generators for disease modeling</title><link href="http://eric-tramel.github.io/digital-twin-generators-for-disease-modeling-08/" rel="alternate" type="text/html" title="Digital twin generators for disease modeling" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/digital-twin-generators-for-disease-modeling-08</id><content type="html" xml:base="http://eric-tramel.github.io/digital-twin-generators-for-disease-modeling-08/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Systems and methods for administrating a federated learning network</title><link href="http://eric-tramel.github.io/systems-and-methods-for-administrating-a-federated-11/" rel="alternate" type="text/html" title="Systems and methods for administrating a federated learning network" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/systems-and-methods-for-administrating-a-federated-11</id><content type="html" xml:base="http://eric-tramel.github.io/systems-and-methods-for-administrating-a-federated-11/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="patent" /><category term="federated learning" /><category term="machine learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Increasing acceptance of AI‐generated digital twins through clinical trial applications</title><link href="http://eric-tramel.github.io/increasing-acceptance-of-aigenerated-digital-twins-04/" rel="alternate" type="text/html" title="Increasing acceptance of AI‐generated digital twins through clinical trial applications" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/increasing-acceptance-of-aigenerated-digital-twins-04</id><content type="html" xml:base="http://eric-tramel.github.io/increasing-acceptance-of-aigenerated-digital-twins-04/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Boosting Clinical Trial Power in Parkinson’s disease (PD) with AI-Generated Digital Twins</title><link href="http://eric-tramel.github.io/boosting-clinical-trial-power-in-parkinsons-diseas-10/" rel="alternate" type="text/html" title="Boosting Clinical Trial Power in Parkinson’s disease (PD) with AI-Generated Digital Twins" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/boosting-clinical-trial-power-in-parkinsons-diseas-10</id><content type="html" xml:base="http://eric-tramel.github.io/boosting-clinical-trial-power-in-parkinsons-diseas-10/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Semi-supervised federated learning for keyword spotting</title><link href="http://eric-tramel.github.io/semi-supervised-federated-learning-for-keyword-spo-09/" rel="alternate" type="text/html" title="Semi-supervised federated learning for keyword spotting" /><published>2023-01-01T00:00:00-05:00</published><updated>2023-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/semi-supervised-federated-learning-for-keyword-spo-09</id><content type="html" xml:base="http://eric-tramel.github.io/semi-supervised-federated-learning-for-keyword-spo-09/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="machine learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Federated learning for predicting histological response to neoadjuvant chemotherapy in triple-negative breast cancer</title><link href="http://eric-tramel.github.io/federated-learning-for-predicting-histological-res-01/" rel="alternate" type="text/html" title="Federated learning for predicting histological response to neoadjuvant chemotherapy in triple-negative breast cancer" /><published>2023-01-01T00:00:00-05:00</published><updated>2023-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/federated-learning-for-predicting-histological-res-01</id><content type="html" xml:base="http://eric-tramel.github.io/federated-learning-for-predicting-histological-res-01/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="machine learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Systems and methods for image classification</title><link href="http://eric-tramel.github.io/systems-and-methods-for-image-classification-07/" rel="alternate" type="text/html" title="Systems and methods for image classification" /><published>2022-01-01T00:00:00-05:00</published><updated>2022-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/systems-and-methods-for-image-classification-07</id><content type="html" xml:base="http://eric-tramel.github.io/systems-and-methods-for-image-classification-07/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="patent" /><category term="image processing" /><category term="machine learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Federated learning challenges and opportunities: An outlook</title><link href="http://eric-tramel.github.io/federated-learning-challenges-and-opportunities-an-03/" rel="alternate" type="text/html" title="Federated learning challenges and opportunities: An outlook" /><published>2022-01-01T00:00:00-05:00</published><updated>2022-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/federated-learning-challenges-and-opportunities-an-03</id><content type="html" xml:base="http://eric-tramel.github.io/federated-learning-challenges-and-opportunities-an-03/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="machine learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">ActPerFL: Active personalized federated learning</title><link href="http://eric-tramel.github.io/actperfl-active-personalized-federated-learning-06/" rel="alternate" type="text/html" title="ActPerFL: Active personalized federated learning" /><published>2022-01-01T00:00:00-05:00</published><updated>2022-01-01T00:00:00-05:00</updated><id>http://eric-tramel.github.io/actperfl-active-personalized-federated-learning-06</id><content type="html" xml:base="http://eric-tramel.github.io/actperfl-active-personalized-federated-learning-06/"><![CDATA[]]></content><author><name></name></author><category term="publication" /><category term="publication" /><category term="machine learning" /><summary type="html"><![CDATA[]]></summary></entry></feed>
