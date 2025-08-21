@@ -1933,6 +1933,64 @@ body:has(.home)::after {
     background-image: radial-gradient(circle at 25% 75%, rgba(59, 66, 82, 0.03) 1px, transparent 1px), radial-gradient(circle at 75% 25%, rgba(59, 66, 82, 0.03) 1px, transparent 1px);
     background-size: 15px 15px, 20px 20px;
     animation: none; } }
+.company-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin: 3rem 0 2rem 0;
+  padding: 2rem 1rem; }
+  @media only screen and (max-width: 400px) {
+    .company-logos {
+      gap: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      padding: 1.5rem 1rem; } }
+
+.company-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+  min-height: 80px; }
+  @media only screen and (max-width: 400px) {
+    .company-logo {
+      width: 100px;
+      min-height: 70px; } }
+  .company-logo .logo-text {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2e3440;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem; }
+    @media only screen and (max-width: 400px) {
+      .company-logo .logo-text {
+        font-size: 1rem; } }
+  .company-logo .job-title {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #4c566a;
+    text-align: center;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 400px) {
+      .company-logo .job-title {
+        font-size: 0.8rem; } }
+  .company-logo[data-company="NVIDIA"] {
+    border: 2px solid #1a365d;
+    border-radius: 12px;
+    padding: 1rem;
+    background: rgba(26, 54, 93, 0.05);
+    margin-top: -1rem; }
+    .company-logo[data-company="NVIDIA"] .logo-text {
+      color: #2e3440;
+      font-weight: 800; }
 
     </style>
 
