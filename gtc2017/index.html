@@ -657,7 +657,7 @@ body {
   line-height: 1.2;
   font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
-  color: #2e3440;
+  color: #1a365d;
   background-color: #e5e9f0; }
 
 h1, h2, h3, h4 {
@@ -667,8 +667,9 @@ h1, h2, h3, h4 {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3);
-  position: relative; }
+  text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4), 0 0 3px rgba(26, 54, 93, 0.3), 0 0 5px rgba(26, 54, 93, 0.2);
+  position: relative;
+  filter: contrast(0.9) blur(0.5px); }
 
 h1 {
   font-size: 3rem;
@@ -719,7 +720,7 @@ a {
 
 p {
   line-height: 1.4;
-  color: #2e3440;
+  color: #1a365d;
   font-weight: 300;
   margin-bottom: 20px;
   letter-spacing: 0px; }
@@ -735,7 +736,7 @@ ul li,
 ol li {
   line-height: 2.4rem;
   font-weight: 300;
-  color: #2e3440; }
+  color: #1a365d; }
 
 img,
 pre,
@@ -902,7 +903,7 @@ pre {
 .home > .list .item:hover .url aside,
 .blog > .list .item:hover .url aside,
 .projects > .list .item:hover .url aside {
-  color: #2e3440; }
+  color: #1a365d; }
 
 .blog > .list > .item > .url > .title,
 .projects > .list > .item > .url > .title {
@@ -949,7 +950,7 @@ pre {
     border-radius: 3px;
     font-size: 1.1rem;
     background: #4c566a;
-    color: #2e3440;
+    color: #1a365d;
     letter-spacing: 1px;
     margin: 3px 1px;
     text-decoration: none;
@@ -1432,9 +1433,10 @@ pre {
         padding: 0.5rem 0;
         position: relative;
         z-index: 2;
-        text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4);
+        text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4), 0 0 2px rgba(26, 54, 93, 0.25), 0 0 4px rgba(26, 54, 93, 0.15);
         transform: rotate(-0.3deg);
-        transition: all 0.2s ease; }
+        transition: all 0.2s ease;
+        filter: contrast(0.9) blur(0.4px); }
         @media only screen and (max-width: 400px) {
           .nav > .list .nav-links > .item > .link {
             font-size: 1.1rem;
@@ -1473,8 +1475,9 @@ pre {
       font-family: "Roboto Condensed", sans-serif;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3);
-      transform: rotate(-0.2deg); }
+      text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3), 0 0 2px rgba(26, 54, 93, 0.25), 0 0 4px rgba(26, 54, 93, 0.15);
+      transform: rotate(-0.2deg);
+      filter: contrast(0.9) blur(0.4px); }
       @media only screen and (max-width: 400px) {
         .nav > .list .nav-name {
           font-size: 1.3rem; } }
@@ -1504,7 +1507,7 @@ pre {
           fill: #1a365d;
           width: 20px;
           height: 20px;
-          filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.3)); }
+          filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 1px rgba(26, 54, 93, 0.4)) drop-shadow(0 0 2px rgba(26, 54, 93, 0.2)) blur(0.3px); }
         .nav > .list .nav-social .link:hover .icon {
           color: #2c5282;
           fill: #2c5282;
@@ -1540,9 +1543,10 @@ pre {
       letter-spacing: 0.08em;
       padding: 0;
       position: relative;
-      text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4);
+      text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4), 0 0 2px rgba(26, 54, 93, 0.25), 0 0 4px rgba(26, 54, 93, 0.15);
       transform: rotate(-0.2deg);
-      transition: all 0.2s ease; }
+      transition: all 0.2s ease;
+      filter: contrast(0.9) blur(0.4px); }
       .nav-home > .list > .item > .link::after {
         content: "";
         position: absolute;
@@ -1562,7 +1566,8 @@ pre {
           transform: scaleX(1) rotate(0.5deg); }
     .nav-home > .list .social-links .link .icon {
       color: #1a365d;
-      fill: #1a365d; }
+      fill: #1a365d;
+      filter: drop-shadow(0 0 1px rgba(26, 54, 93, 0.4)) drop-shadow(0 0 2px rgba(26, 54, 93, 0.2)) blur(0.3px); }
       .nav-home > .list .social-links .link .icon:hover {
         color: #2c5282;
         fill: #2c5282; }
@@ -1810,7 +1815,8 @@ pre {
       transform: translate3d(0, 0, 0); }
   .social-links > .icon {
     transition: all ease-in-out 0.2s;
-    color: #2e3440; }
+    color: #1a365d;
+    filter: drop-shadow(0 0 1px rgba(26, 54, 93, 0.4)) drop-shadow(0 0 2px rgba(26, 54, 93, 0.2)) blur(0.3px); }
 
 .spoiler {
   position: relative; }
@@ -2036,7 +2042,7 @@ body:has(.home)::after {
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
-    color: #2e3440;
+    color: #1a365d;
     text-align: center;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -2063,7 +2069,7 @@ body:has(.home)::after {
     background: rgba(26, 54, 93, 0.05);
     margin-top: -1rem; }
     .company-logo[data-company="NVIDIA"] .logo-text {
-      color: #2e3440;
+      color: #1a365d;
       font-weight: 800; }
 
 #marker-drawer {
