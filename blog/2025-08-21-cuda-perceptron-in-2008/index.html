@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CUDA Perceptron in 2008</title><meta name="description" content="After I finished by B.S. in Computer Engineering, my thought was to take a quick two year extension into a Masters degree, just for pure marketability"><meta property="og:title" content="CUDA Perceptron in 2008"><meta property="og:description" content="After I finished by B.S. in Computer Engineering, my thought was to take a quick two year extension into a Masters degree, just for pure marketability"><meta property="og:image" content="/assets/images/profile.jpg"><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/favicon/apple-touch-icon-57x57.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/favicon/apple-touch-icon-114x114.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/favicon/apple-touch-icon-72x72.png"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/favicon/apple-touch-icon-144x144.png"><link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/images/favicon/apple-touch-icon-60x60.png"><link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/images/favicon/apple-touch-icon-120x120.png"><link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/images/favicon/apple-touch-icon-76x76.png"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/favicon/apple-touch-icon-152x152.png"><link rel="icon" type="image/png" href="/assets/images/favicon/favicon-196x196.png" sizes="196x196"><link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/png" href="/assets/images/favicon/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/assets/images/favicon/favicon-16x16.png" sizes="16x16"><link rel="icon" type="image/png" href="/assets/images/favicon/favicon-128.png" sizes="128x128"><link rel="icon" href="/assets/images/favicon/favicon.ico"><meta name="application-name" content=" "><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="/assets/images/favicon/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="/assets/images/favicon/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="/assets/images/favicon/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="/assets/images/favicon/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="/assets/images/favicon/mstile-310x310.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Roboto+Condensed:ital,wght@0,400;0,500;0,700;1,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css" crossorigin="anonymous"><style>.author-block[data-astro-cid-efi4etbr]{display:flex;align-items:center;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid #c4bfb5}.author-photo[data-astro-cid-efi4etbr]{width:64px;height:64px;border-radius:50%;object-fit:cover}.author-name[data-astro-cid-efi4etbr]{font-weight:500;color:#2e3440;margin-bottom:0}.author-bio[data-astro-cid-efi4etbr]{font-size:14px;color:#4c566a;margin-bottom:0}.post-article[data-astro-cid-xj2uyz6m]{max-width:810px;margin:0 auto}.post-header[data-astro-cid-xj2uyz6m]{text-align:center;margin-bottom:3rem}.post-title[data-astro-cid-xj2uyz6m]{font-family:Roboto Condensed,sans-serif;color:#1a365d;text-transform:uppercase;letter-spacing:.06em;text-shadow:.5px .5px 0 #2c5282,0 0 1px rgba(26,54,93,.3);font-size:3rem;font-weight:500;transform:rotate(-.2deg);margin-bottom:1rem;line-height:1.2}.post-meta[data-astro-cid-xj2uyz6m]{color:#4c566a;font-weight:300;font-size:14px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:2rem}.post-header[data-astro-cid-xj2uyz6m]+.prose[data-astro-cid-xj2uyz6m]{margin-top:3rem}.related-posts[data-astro-cid-dpgbfi7r]{margin-top:3rem;padding-top:2rem;border-top:1px solid #c4bfb5}.related-posts[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{font-size:1.4rem;margin-bottom:1rem}.related-posts[data-astro-cid-dpgbfi7r] ul[data-astro-cid-dpgbfi7r]{list-style:none;padding:0;margin:0}.related-posts[data-astro-cid-dpgbfi7r] li[data-astro-cid-dpgbfi7r]{margin-bottom:.5rem}.related-posts[data-astro-cid-dpgbfi7r] a[data-astro-cid-dpgbfi7r]{color:#1a365d;font-weight:500;text-decoration:underline}.related-posts[data-astro-cid-dpgbfi7r] a[data-astro-cid-dpgbfi7r]:hover{color:#2c5282}
+.social-links[data-astro-cid-zamss57n]{display:flex;align-items:center;gap:1rem}.social-icon-link[data-astro-cid-zamss57n]{color:#4c566a;text-decoration:none;transition:color .2s ease}.social-icon-link[data-astro-cid-zamss57n]:hover{color:#1a365d}.social-icon[data-astro-cid-zamss57n]{width:20px;height:20px}.cv-label[data-astro-cid-zamss57n]{font-size:14px;font-weight:600}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.v9Cr-8VM.css"></head> <body class data-astro-cid-37fxchfa> <nav class="nav-fixed" data-astro-cid-dmqpwcec><div class="nav-inner" data-astro-cid-dmqpwcec><div class="nav-left" data-astro-cid-dmqpwcec><a href="/" class="nav-link" data-astro-cid-dmqpwcec>Home</a><a href="/blog" class="nav-link" data-astro-cid-dmqpwcec>Blog</a><a href="/about" class="nav-link" data-astro-cid-dmqpwcec>Bio</a><a href="/publications" class="nav-link" data-astro-cid-dmqpwcec>Publications</a></div><div class="nav-right" data-astro-cid-dmqpwcec><span class="nav-name" data-astro-cid-dmqpwcec>Eric W. Tramel</span><div class="social-links nav-social" data-astro-cid-zamss57n> <a href="https://twitter.com/fujikanaeda" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Twitter/X" data-astro-cid-zamss57n> <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" data-astro-cid-zamss57n> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" data-astro-cid-zamss57n></path> </svg>      </a><a href="https://github.com/eric-tramel" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="GitHub" data-astro-cid-zamss57n>   <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" data-astro-cid-zamss57n> <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" data-astro-cid-zamss57n></path> </svg>    </a><a href="https://scholar.google.com/citations?user=jre2iwMAAAAJ" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Google Scholar" data-astro-cid-zamss57n>    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" data-astro-cid-zamss57n> <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" data-astro-cid-zamss57n></path> </svg>   </a> </div> <img src="/assets/images/profile.jpg" alt="Eric W. Tramel" class="nav-photo" data-astro-cid-dmqpwcec></div></div></nav> <div class="site-container" style="padding-top: 125px;" data-astro-cid-37fxchfa> <main data-astro-cid-37fxchfa>  <article class="post-article" data-astro-cid-xj2uyz6m> <header class="post-header" data-astro-cid-xj2uyz6m> <h1 class="post-title" data-astro-cid-xj2uyz6m>CUDA Perceptron in 2008</h1> <div class="post-meta" data-astro-cid-xj2uyz6m> <time datetime="2025-08-21T00:00:00.000Z" data-astro-cid-xj2uyz6m>Aug 20, 2025</time> <span data-astro-cid-xj2uyz6m>&middot;</span> <span style="color: #4c566a; font-size: 14px; font-weight: 300;">11 min read</span> </div> </header> <div class="prose" data-astro-cid-xj2uyz6m>  <h1 id="cuda-perceptron-in-2008">CUDA Perceptron in 2008</h1>
+<p>After I finished by B.S. in Computer Engineering, my thought was to take a quick two year extension into a Masters degree, just for pure marketability before getting into the job market. I hadn’t yet gotten the itch for research, and I wasn’t keenly invested into the state of machine learning at the time. However, I had previously run projects for both image classification using neural-networks, and as a side-project, a friend and I attempted to train an NN for stock prediction – a hopeless task, but at least one which was pretty educational.</p>
+<p>Further, because of my original intent in pursuing game-engine architecture, I had spent some time studying both OpenGL, and had become familiar with the concept of general-purpose GPU computing. This was novel at the time – ATI and Nvidia had made these great machines for running graphics pipelines, but their other purposes had only just started to hit the scientific computing scene.</p>
+<p>HPC researchers were at the time writing custom graphics code to render bizzaro images as a way to hack their general programs into GPUs. Nvidia, in a stroke of brilliance, capitalized on this growing niche with the <a href="https://www.google.com/url?sa=t&#x26;source=web&#x26;rct=j&#x26;opi=89978449&#x26;url=https://en.wikipedia.org/wiki/CUDA%23:~:text%3DCUDA%2520was%2520released%2520in%25202006,CUDA%2520changed%2520to%2520neural%2520networks.&#x26;ved=2ahUKEwjYhrf3huCJAxXqfjABHT2sJTQQFnoECBUQAw&#x26;usg=AOvVaw0n-tTXU8Yk78IkKNOSfJ57">release of CUDA in 2006</a>. CUDA made the implementation of such general algorithms so much smoother, and started the march of tooling that arrived at the general state of AI computing today.</p>
+<p>I wanted to wed together these two interests, so in 2007-2008 I sought to write neural-network computations on the GPU. Initially I didn’t have a concept for implementing the efficient <em>training</em> of NNs, however my first pass was focused on accelerating <em>inference</em> on MLPs. However, I believe one of the first references was Oh &#x26; Jung’s 2004 publication <a href="https://koreascience.kr/article/CFKO200725752349451.pdf"><em>GPU Implementation of Neural Networks</em></a> for text classification. Like my own junior effort, this paper nowhere describes how to <strong>train</strong> such a network, but the promise was certainly there.</p>
+<p><img src="/assets/images/blog/pasted-image-20241116000353.png" alt="GPU Implementation Paper"></p>
+<p>Later, and more notably, Ng and students published on efficient DBN training on GPU in 2009. But I think maybe the prize goes to Chellapilla, Puri, and Simard with their 2006 work <a href="https://inria.hal.science/inria-00112631/document">High Performance Convolutional Neural Networks for Document Processing</a>, which implemented <strong>both</strong> forward and back-prop to permit full CNN training on the GPU to great effect. Perhaps their only sin with respect to the arc of history was to achieve a mere 3x speedup versus <a href="http://robotics.stanford.edu/~ang/papers/icml09-LargeScaleUnsupervisedDeepLearningGPU.pdf">the 70x that Raina, Madhavan, and Ng would report a few years later</a>. Perhaps there was a bitter lesson there – Ng et all opted for a then-refined CUDA + GPU setup versus the pixel &#x26; vertex shader programming on ATI cards that netted Chellapilla et al such a modest gain.</p>
+<p>However, at the time, I was unaware of these developments. As I said, I had no introduction to research practice at this point in 2007-2008. It is now a funny artifact of history that I can see that I had stumbled into a topic that was really bleeding edge, and would later have a huge impact on the world with Krizhevsky, Sutskever, and Hinton’s <a href="https://en.wikipedia.org/wiki/AlexNet#:~:text=AlexNet%20is%20the%20name%20of,at%20the%20University%20of%20Toronto.">AlexNet moment in 2012</a>.</p>
+<p>While I was able to get running on CUDA and got some nice speedups on MLP inference, I didn’t pursue the topic and dropped it. Why?</p>
+<p><strong>Funding.</strong> At the time, the professor I was working with offered me no funding whatsoever, and was willing to just take me on as a kind of self-funded student. I had some TA work, but this was a really bad setup for my personal situation.
+<strong>Lack of Mentorship.</strong> MSU didn’t really have anyone working on these ML topics or really involved in the community at the time – which is why even if I had continued, I would have missed the entire wave. Having connections within an active area of research is critical, and my impromptu-not-quite-advisee-and-no-funding situation didn’t help.
+<strong>Too Early For Impact.</strong> Again, one needs to think about the timing. Speedups end-to-end training speedups on GPU were demonstrated in 2006 and 2009. However, the “AlexNet Moment” didn’t occur until <em><strong>2012</strong></em>. The reasons for this are probably long, but the main one was that we just did not have access to the kinds of datasets which would permit effective ML training at a useful scale. AlexNet was only possible owing to <a href="https://en.wikipedia.org/wiki/ImageNet">Fei-Fei Li and the ImageNet dataset</a>. Prior to that, while one <em>could</em> attempt to bring together a lot of data to demonstrate the possibility of training neural networks (e.g. Lecun with MNIST), there was no <em>practical day-to-day utility</em> in it since no organization was undertaking that or had access to such data readily. The world was not yet “ML Ready”. Further, it meant that at the time, there were no public demonstrations of the utility of NNs in the <em>zeitgeist</em> at all – in fact one of my CS professors pointedly told me this field of research was entirely dead.</p>
+<p>As further evidence of how <em>early</em> the concept of ML on GPU was at this point, <a href="https://www.bit-tech.net/reviews/tech/cpus/david-kirk-interview/1/">take a look at this April 2008 article on CUDA</a> based on interviews with David Kirk, then Nvidia’s Chief Scientist. While there is a great discussion of the architecture of Nvidia chips, CUDA, and the utility for wide-ranging applications, what <strong>isn’t</strong> there is a single mention of pattern recognition, machine learning, AI, etc.</p>
+<h2 id="experiments">Experiments</h2>
+<p>Doing a bit of self-archaeology, I was able to come up with at least a little bit of information about this project. From the schematic below, it seems like I was taking a look at the implementation of just a single linear layer with an activation function (y = f(W x)).</p>
+<p><img src="/assets/images/blog/implementation.jpg" alt="Implementation Diagram"></p>
+<p>The game of this experiment is to see where the advantage of GPU computation comes in for this simple operation. To test this, it seems like I had three possible options,</p>
+<p>**A
+<strong>An 8400GS.</strong> This <a href="https://www.techpowerup.com/gpu-specs/geforce-8400-gs.c205">card</a> had 256MB @ ~400Mhz – purportedly able to hit 29.38 GFlops.
+<strong>An 8800 GTS.</strong> This <a href="https://www.techpowerup.com/gpu-specs/geforce-8800-gts-320.c196">card</a> had 320MB @ ~500Mhz, but more parallel compute, clocking in at about 10x the compute throughput, ~228 GFlops.</p>
+<p>Scaling up architecture dimensionality, we see an interesting comparison curve.</p>
+<p><img src="/assets/images/blog/final-results.jpg" alt="Final Results"></p>
+<p>I wanted to understand just how this level of performance compares to today’s consumer hardware. Below, I made a quick comparison for the same experiment, but this time running it on the Apple Silicon M4 chip (a Q4 2024 Macbook). Here, the implementation was done using a simple PyTorch model.</p>
+<p><img src="/assets/images/blog/pasted-image-20241119160358.png" alt="Modern Comparison"></p>
+<h3 id="2008-implementation">2008 Implementation</h3>
+<p>For posterity, here you can see what programming NNs looked like at the time and count your blessings.</p>
+<p><strong>Main</strong></p>
+<p>`1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+/***************************************************************************
+CUDATest: This application is meant to be a simple test bench to play with
+kernel code for CUDA.</p>
+<p>Author: Eric Tramel, MSU
+***************************************************************************/</p>
+<p>#include
+#include
+#include
+#include
+#include
+#include
+#include “template_kernel.cu”</p>
+<p>//#define PAUSE
+#define CHECK_OUTPUT</p>
+<p>#define NUMBER_RUNS  10
+#define PASS_COUNT 300</p>
+<p>const int DESIRED_RES = INPUT_COUNT*HIDDEN_LEVEL_NEURON_COUNT;
+const int hiddenLevelWeightingMatrixSize = INPUT_COUNT * HIDDEN_LEVEL_NEURON_COUNT;
+const int outputLevelWeightingMatrixSize = HIDDEN_LEVEL_NEURON_COUNT * OUTPUT_LEVEL_NEURON_COUNT;</p>
+<p>float minf(float a, float b){
+float out = a;
+if(b  a)
+out = b;
+return out;
+}</p>
+<p>void displayVector(float* vector, int length){
+int i;
+for(i = 0; i  [0],[1],[2],…,[INPUT_COUNT] is the first COLUMN
+//of our matrix. Immediate after this is the NEXT COLUMN, and so on.
+//
+#ifdef PAUSE
+getchar();
+printf(“Initializing Input Vector\n”);
+#endif
+for(counter = 0; counter >>(d_inputVector, d_hiddenLevelWeightingMatrix, d_hiddenToOutputBuffer);
+generalPerceptron>>(d_hiddenToOutputBuffer,d_outputLevelWeightingMatrix,d_outputVector);</p>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>//Initialize hTimer</span></span>
+<span class="line"><span>//</span></span>
+<span class="line"><span>cutCreateTimer(&#x26;hTimer);</span></span>
+<span class="line"><span>cutResetTimer(hTimer);</span></span>
+<span class="line"><span>cutStartTimer(hTimer);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//Execute the kernel using the data we copied from our host allocated memory into the</span></span>
+<span class="line"><span>//device global memory.</span></span>
+<span class="line"><span>//</span></span></code></pre>
+<p>#ifdef PAUSE
+getchar();
+printf(“Calling inputToHidden>>  -> hiddenToOutput>>\n”);
+#endif
+int passCount;
+for(passCount = 0; passCount  >>(d_inputVector, d_hiddenLevelWeightingMatrix, d_hiddenToOutputBuffer);
+generalPerceptron>>(d_hiddenToOutputBuffer,d_outputLevelWeightingMatrix,d_outputVector);
+}</p>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>//CUT_CHECK_ERROR("Execution failed");</span></span>
+<span class="line"><span>cudaThreadSynchronize();</span></span>
+<span class="line"><span>cutStopTimer(hTimer);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//Capture the d_outputVector from the device global memory and then copy it back to</span></span>
+<span class="line"><span>//the Host device, (CPU)</span></span>
+<span class="line"><span>//</span></span>
+<span class="line"><span>//For debug purposes, lets gather together all of our global data out of the device</span></span>
+<span class="line"><span>//</span></span>
+<span class="line"><span>cudaMemcpy(h_hiddenLevelWeightingMatrix,d_hiddenLevelWeightingMatrix,	sizeof(float) * hiddenLevelWeightingMatrixSize, cudaMemcpyDeviceToHost);</span></span>
+<span class="line"><span>cudaMemcpy(h_hiddenToOutputBuffer,		d_hiddenToOutputBuffer,			sizeof(float) * HIDDEN_LEVEL_NEURON_COUNT,		cudaMemcpyDeviceToHost);</span></span>
+<span class="line"><span>cudaMemcpy(h_outputLevelWeightingMatrix,d_outputLevelWeightingMatrix,	sizeof(float) * outputLevelWeightingMatrixSize, cudaMemcpyDeviceToHost);</span></span>
+<span class="line"><span>cudaMemcpy(h_outputVector,				d_outputVector,					sizeof(float) * OUTPUT_LEVEL_NEURON_COUNT, 		cudaMemcpyDeviceToHost);</span></span>
+<span class="line"><span>cudaMemcpy(h_hiddenLevelFinishedFlag,	d_hiddenLevelFinishedFlag,		sizeof(unsigned int),							cudaMemcpyDeviceToHost);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>currentTime = cutGetTimerValue(hTimer);</span></span></code></pre>
+<p>#ifdef CHECK_OUTPUT
+int j;
+printf(“[Run %d]: “,runCount);
+for(j = 0; j `</p>
+<p><strong>CUDA Kernels</strong></p>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1</span></span>
+<span class="line"><span>2</span></span>
+<span class="line"><span>3</span></span>
+<span class="line"><span>4</span></span>
+<span class="line"><span>5</span></span>
+<span class="line"><span>6</span></span>
+<span class="line"><span>7</span></span>
+<span class="line"><span>8</span></span>
+<span class="line"><span>9</span></span>
+<span class="line"><span>10</span></span>
+<span class="line"><span>11</span></span>
+<span class="line"><span>12</span></span>
+<span class="line"><span>13</span></span>
+<span class="line"><span>14</span></span>
+<span class="line"><span>15</span></span>
+<span class="line"><span>16</span></span>
+<span class="line"><span>17</span></span>
+<span class="line"><span>18</span></span>
+<span class="line"><span>19</span></span>
+<span class="line"><span>20</span></span>
+<span class="line"><span>21</span></span>
+<span class="line"><span>22</span></span>
+<span class="line"><span>23</span></span>
+<span class="line"><span>24</span></span>
+<span class="line"><span>25</span></span>
+<span class="line"><span>26</span></span>
+<span class="line"><span>27</span></span>
+<span class="line"><span>28</span></span>
+<span class="line"><span>29</span></span>
+<span class="line"><span>30</span></span>
+<span class="line"><span>31</span></span>
+<span class="line"><span>32</span></span>
+<span class="line"><span>33</span></span>
+<span class="line"><span>34</span></span>
+<span class="line"><span>35</span></span>
+<span class="line"><span>36</span></span>
+<span class="line"><span>37</span></span>
+<span class="line"><span>38</span></span>
+<span class="line"><span>39</span></span>
+<span class="line"><span>40</span></span>
+<span class="line"><span>41</span></span>
+<span class="line"><span>42</span></span>
+<span class="line"><span>43</span></span>
+<span class="line"><span>44</span></span>
+<span class="line"><span>45</span></span>
+<span class="line"><span>46</span></span>
+<span class="line"><span>47</span></span>
+<span class="line"><span>48</span></span>
+<span class="line"><span>49</span></span>
+<span class="line"><span>50</span></span>
+<span class="line"><span>51</span></span>
+<span class="line"><span>52</span></span>
+<span class="line"><span>53</span></span>
+<span class="line"><span>54</span></span>
+<span class="line"><span>55</span></span>
+<span class="line"><span>56</span></span>
+<span class="line"><span>57</span></span>
+<span class="line"><span>58</span></span>
+<span class="line"><span>59</span></span>
+<span class="line"><span>60</span></span>
+<span class="line"><span>61</span></span>
+<span class="line"><span>62</span></span>
+<span class="line"><span>63</span></span>
+<span class="line"><span>64</span></span>
+<span class="line"><span>65</span></span>
+<span class="line"><span>66</span></span>
+<span class="line"><span>67</span></span>
+<span class="line"><span>68</span></span>
+<span class="line"><span>69</span></span>
+<span class="line"><span>70</span></span>
+<span class="line"><span>71</span></span>
+<span class="line"><span>72</span></span>
+<span class="line"><span>73</span></span>
+<span class="line"><span>74</span></span>
+<span class="line"><span>75</span></span>
+<span class="line"><span>/*FOUND THE DEADLOCK ERROR:</span></span>
+<span class="line"><span>For the first stage of the neural net, we CANNOT have a __synchthreads() for only</span></span>
+<span class="line"><span>a specific number of threads within a single block: this is going to cause a deadlock</span></span>
+<span class="line"><span>as the other threads are supposed to wait to arrive at a point that they can never</span></span>
+<span class="line"><span>get to (having __syncthreads() within an if(threadIdx) conditional). To overcome this</span></span>
+<span class="line"><span>we're going to have to make the hidden layer matrix conform to our sizing rules (256</span></span>
+<span class="line"><span>threads/column) and simply pad our data.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>*/</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#define IDENTITY 0</span></span>
+<span class="line"><span>#define SIGMOID  1</span></span>
+<span class="line"><span>#define INPUT_COUNT 64</span></span>
+<span class="line"><span>#define HIDDEN_LEVEL_NEURON_COUNT 256</span></span>
+<span class="line"><span>#define OUTPUT_LEVEL_NEURON_COUNT 32</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>__device__ float</span></span>
+<span class="line"><span>activationFunction (float in, int mode){</span></span>
+<span class="line"><span>	switch(mode){</span></span>
+<span class="line"><span>		case IDENTITY:</span></span>
+<span class="line"><span>			return in;</span></span>
+<span class="line"><span>		case SIGMOID:</span></span>
+<span class="line"><span>			//This exp function could be potentially taking 32 clock cycles</span></span>
+<span class="line"><span>			//It must be computed once for each neuron.</span></span>
+<span class="line"><span>			//Required, though :/</span></span>
+<span class="line"><span>			//</span></span>
+<span class="line"><span>			return 1/(1 - expf(-1.0*in));</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0.0;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>template unsigned int inputCount></span></span>
+<span class="line"><span>__global__ void</span></span>
+<span class="line"><span>generalPerceptron(float* g_inputVector, float* g_weightingMatrix,</span></span>
+<span class="line"><span>				  float* g_outputVector){</span></span>
+<span class="line"><span>	extern __shared__ float sdata[];</span></span>
+<span class="line"><span>	unsigned int tid = threadIdx.x;</span></span>
+<span class="line"><span>	//This multiplacation of blockIdx.x and blockDim.x could potentially be</span></span>
+<span class="line"><span>	//taking 16 clock cycles instead of 4 clock cycles. That is a significant</span></span>
+<span class="line"><span>	//number of wasted clock cycles over the course of thousands of iterations.</span></span>
+<span class="line"><span>	//Perhaps this time could be reduced through use of the __mul24() function.</span></span>
+<span class="line"><span>	//</span></span>
+<span class="line"><span>	//RESULTS: useage of __mul24() versus a straight multiplcation makes no</span></span>
+<span class="line"><span>	//noticable difference overall. Disappointing.</span></span>
+<span class="line"><span>	unsigned int i = __mul24(blockIdx.x,blockDim.x) + tid;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	sdata[tid] = g_weightingMatrix[i] * g_inputVector[tid];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	__syncthreads();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if (inputCount >= 512) { if (tid  256) { sdata[tid] += sdata[tid + 256]; } __syncthreads(); }</span></span>
+<span class="line"><span>    if (inputCount >= 256) { if (tid  128) { sdata[tid] += sdata[tid + 128]; } __syncthreads(); }</span></span>
+<span class="line"><span>    if (inputCount >= 128) { if (tid   64) { sdata[tid] += sdata[tid +  64]; } __syncthreads(); }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    if (tid  32)</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>        if (inputCount >=  64) { sdata[tid] += sdata[tid + 32];}</span></span>
+<span class="line"><span>        if (inputCount >=  32) { sdata[tid] += sdata[tid + 16];}</span></span>
+<span class="line"><span>        if (inputCount >=  16) { sdata[tid] += sdata[tid +  8];}</span></span>
+<span class="line"><span>        if (inputCount >=   8) { sdata[tid] += sdata[tid +  4];}</span></span>
+<span class="line"><span>        if (inputCount >=   4) { sdata[tid] += sdata[tid +  2];}</span></span>
+<span class="line"><span>        if (inputCount >=   2) { sdata[tid] += sdata[tid +  1];}</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	__syncthreads();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if(tid == 0){</span></span>
+<span class="line"><span>		g_outputVector[blockIdx.x] = activationFunction(sdata[0],IDENTITY);</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>   </div> <div class="author-block" data-astro-cid-efi4etbr><img src="/assets/images/profile.jpg" alt="Eric W. Tramel, Ph.D." class="author-photo" data-astro-cid-efi4etbr><div data-astro-cid-efi4etbr><p class="author-name" data-astro-cid-efi4etbr>Eric W. Tramel, Ph.D.</p><p class="author-bio" data-astro-cid-efi4etbr>Principal Research Scientist, NVIDIA</p></div></div> </article>  </main>  <footer class="site-footer" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>Eric W. Tramel, Ph.D. &copy; 2026</p> </footer>  </div> </body></html> 
