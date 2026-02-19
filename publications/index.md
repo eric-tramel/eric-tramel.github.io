@@ -10,8 +10,8 @@ title: "Publications"
 - E. W. Tramel, "[Federated Learning: Rewards & Challenges of Distributed Private ML](/publications/tra2019/)" ([md](/publications/tra2019.md)), *Qcon.ai (San Francisco, USA)*, 2019.
 - E. W. Tramel, "[(Panelist) Federated Learning: ML with Privacy on the Edge](/publications/tra2018/)" ([md](/publications/tra2018.md)), *Fast Forward Labs Webinar*, 2018.
 - E. W. Tramel, "[Inferring Sparsity: Compressed Sensing using Generalized Restricted Boltzmann Machines](/publications/tra2016/)" ([md](/publications/tra2016.md)), *International Traveling Workshop on Interactions between Sparse Models and Technology (iTWIST)*, 2016.
-- E. W. Tramel, "[Discrete Reconstruction for Electron Tomography](/publications/tra2015b/)" ([md](/publications/tra2015b.md)), *General Congress of the Société Fracaise de Physique*, 2015.
 - E. W. Tramel, "[Belief Propagation & Approximations: Discrete Tomography](/publications/tra2015/)" ([md](/publications/tra2015.md)), *Workshop on Sparse Tomographic Reconstruction: Theoretical and Numerical Aspects*, 2015.
+- E. W. Tramel, "[Discrete Reconstruction for Electron Tomography](/publications/tra2015b/)" ([md](/publications/tra2015b.md)), *General Congress of the Société Fracaise de Physique*, 2015.
 - E. W. Tramel, "[Introduction to Compressed Sensing](/publications/tra2015c/)" ([md](/publications/tra2015c.md)), *École de Physique des Houches, «Biophysique: de la Mesure au Modèle en biologie»*, 2015.
 - E. W. Tramel, "[A probabilistic approach to compressed sensing: Robust Algorithms](/publications/tra2014/)" ([md](/publications/tra2014.md)), *International Traveling Workshop on Interactions between Sparse Models and Technology (iTWIST)*, 2014.
 
