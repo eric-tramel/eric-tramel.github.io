@@ -4,6 +4,7 @@ title: "Blog"
 
 # Blog
 
+- **Feb 17 2026** — [Slop Guard: Prose Linter for AI-Assisted Writing](/blog/2026-02-18-slop-guard/) ([md](/blog/2026-02-18-slop-guard.md))
 - **Feb 08 2026** — [Why Not Both?](/blog/2026-02-09-why-not-both/) ([md](/blog/2026-02-09-why-not-both.md))
 - **Feb 06 2026** — [Searchable Agent Memory in a Single File](/blog/2026-02-07-searchable-agent-memory/) ([md](/blog/2026-02-07-searchable-agent-memory.md))
 - **Aug 20 2025** — [CUDA Perceptron in 2008](/blog/2025-08-21-cuda-perceptron-in-2008/) ([md](/blog/2025-08-21-cuda-perceptron-in-2008.md))

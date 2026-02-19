@@ -6,6 +6,7 @@ Eric's site includes a blog on ML engineering and agent tooling, a full academic
 
 ## Blog
 
+- [Slop Guard: Prose Linter for AI-Assisted Writing](https://eric-tramel.github.io/blog/2026-02-18-slop-guard.md): A rule-based prose linter that catches formulaic writing patterns LLMs fall into. No LLM judge, no API calls. Just compiled regex and an afternoon of calibration against human reference texts.
 - [Why Not Both?](https://eric-tramel.github.io/blog/2026-02-09-why-not-both.md): Wiring OpenAI's Codex into Claude Code via MCP. Two model families, one terminal, real bugs found.
 - [Searchable Agent Memory in a Single File](https://eric-tramel.github.io/blog/2026-02-07-searchable-agent-memory.md): A single-file BM25 MCP server that gives a Claude Code agent searchable access to its own conversation history.
 - [CUDA Perceptron in 2008](https://eric-tramel.github.io/blog/2025-08-21-cuda-perceptron-in-2008.md): After I finished by B.S. in Computer Engineering, my thought was to take a quick two year extension into a Masters degree, just for pure marketability
