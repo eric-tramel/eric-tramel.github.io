@@ -16,9 +16,10 @@ title: "Publications"
 - E. W. Tramel, "[Introduction to Compressed Sensing](/publications/tra2015c/)" ([md](/publications/tra2015c.md)), *École de Physique des Houches, «Biophysique: de la Mesure au Modèle en biologie»*, 2015.
 - E. W. Tramel, "[A probabilistic approach to compressed sensing: Robust Algorithms](/publications/tra2014/)" ([md](/publications/tra2014.md)), *International Traveling Workshop on Interactions between Sparse Models and Technology (iTWIST)*, 2014.
 
-## Preprints
+## Tech Reports & Preprints
 
-- Nameyeh Alam & Jake Basilico & Daniele Bertolini & Satish Casie Chetty & Heather D'Angelo & Ryan Douglas & Charles K Fisher & Franklin Fuller & Melissa Gomes & Rishabh Gupta & Alex Lang & Anton Loukianov & Rachel Mak-McCully & Cary Murray & Hanalei Pham & Susanna Qiao & Elena Ryapolova-Webb & Aaron Smith & Dimitri Theoharatos & Anil Tolwani & Eric W Tramel & Anna Vidovszky & Judy Viduya & Jonathan R Walsh, "[Digital twin generators for disease modeling](/publications/digital-twin-generators-for-disease-modeling-08/)" ([md](/publications/digital-twin-generators-for-disease-modeling-08.md)), *arXiv preprint arXiv:2405.01488*, 2024.
+- ★ Nvidia Nemotron Team, "[Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](/publications/nemotron-3-nano-open-efficient-mixture-of-experts-hybrid-mamba-transformer-model-for-agentic-reasoning/)" ([md](/publications/nemotron-3-nano-open-efficient-mixture-of-experts-hybrid-mamba-transformer-model-for-agentic-reasoning.md)), *arXiv preprint arXiv:2512.20848*, 2025.
+- Unlearn.ai DTG Team, "[Digital twin generators for disease modeling](/publications/digital-twin-generators-for-disease-modeling-08/)" ([md](/publications/digital-twin-generators-for-disease-modeling-08.md)), *arXiv preprint arXiv:2405.01488*, 2024.
 - Constance Beguier & Jean Ogier du Terrail & Iqraa Meah & Mathieu Andreux & Eric W Tramel, "[Differentially private federated learning for cancer prediction](/publications/differentially-private-federated-learning-for-canc-03/)" ([md](/publications/differentially-private-federated-learning-for-canc-03.md)), *arXiv preprint arXiv:2101.02997*, 2021.
 - Constance Beguier & Mathieu Andreux & Eric W Tramel, "[Efficient sparse secure aggregation for federated learning](/publications/efficient-sparse-secure-aggregation-for-federated--08/)" ([md](/publications/efficient-sparse-secure-aggregation-for-federated--08.md)), *arXiv preprint*, 2020.
 - G. Rochette, A. Manoel, E. W. Tramel, "[Efficient Per-Example Gradient Computations in Convolutional Neural Networks](/publications/rmt2019/)" ([md](/publications/rmt2019.md)), *arXiv [cs.LG]: 1912.06015*, 2019.
@@ -55,6 +56,7 @@ title: "Publications"
 ## Patents
 
 - Mathieu Galtier & Mathieu Andreux & Camille Marini & Eric W Tramel & Inal Djafar & Jean du Terrail, "[Systems and methods for administrating a federated learning network](/publications/systems-and-methods-for-administrating-a-federated-11/)" ([md](/publications/systems-and-methods-for-administrating-a-federated-11.md)), *US Patent Application US20240046147A1*, 2024.
+- Pierre Courtiol & Eric W Tramel & Marc Sanselme & Gilles Wainrib, "[Systems and methods for image classification](/publications/systems-and-methods-for-image-classification-12/)" ([md](/publications/systems-and-methods-for-image-classification-12.md)), *US Patent Application US20240346651A1*, 2024.
 - Pierre Courtiol & Eric W Tramel & Marc Sanselme & Gilles Wainrib, "[Systems and methods for image classification](/publications/systems-and-methods-for-image-classification-07/)" ([md](/publications/systems-and-methods-for-image-classification-07.md)), *US Patent US11482022B2*, 2022.
 - Ankit Mohan & Siu-Kei Tin & Eric W Tramel, "[Systems and Methods for Compressive Light Sensing Using Multiple Spatial Light Modulators](/publications/mtt2015/)" ([md](/publications/mtt2015.md)), *US Patent US9160900B2*, 2015.
 
