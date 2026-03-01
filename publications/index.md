@@ -6,6 +6,7 @@ title: "Publications"
 
 ## Talks
 
+- ★ Eric W. Tramel, "[Synthetic Data Powering Pretraining](/publications/synthetic-data-powering-pretraining-berkeley-2026/)" ([md](/publications/synthetic-data-powering-pretraining-berkeley-2026.md)), *UC Berkeley EE 194/290: Scalable AI (Berkeley, USA)*, 2026.
 - Eric W. Tramel, "[Generating Zero-Shot Hard-Case Hallucinations: A Synthetic and Open Data Approach](/publications/generating-zero-shot-hard-case-hallucinations-databricks/)" ([md](/publications/generating-zero-shot-hard-case-hallucinations-databricks.md)), *Databricks Data + AI Summit (San Francisco, USA)*, 2025.
 - E. W. Tramel, "[Federated Learning: Rewards & Challenges of Distributed Private ML](/publications/tra2019/)" ([md](/publications/tra2019.md)), *Qcon.ai (San Francisco, USA)*, 2019.
 - E. W. Tramel, "[(Panelist) Federated Learning: ML with Privacy on the Edge](/publications/tra2018/)" ([md](/publications/tra2018.md)), *Fast Forward Labs Webinar*, 2018.

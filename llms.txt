@@ -26,6 +26,7 @@ Eric's site includes a blog on ML engineering and agent tooling, a full academic
 ## Optional
 
 - [Blog Index](https://eric-tramel.github.io/blog/index.md): Full listing of all blog posts with dates
+- [Synthetic Data Powering Pretraining](https://eric-tramel.github.io/publications/synthetic-data-powering-pretraining-berkeley-2026.md): Eric W. Tramel, *UC Berkeley EE 194/290: Scalable AI (Berkeley, USA)*, 2026.
 - [Generating Zero-Shot Hard-Case Hallucinations: A Synthetic and Open Data Approach](https://eric-tramel.github.io/publications/generating-zero-shot-hard-case-hallucinations-databricks.md): Eric W. Tramel, *Databricks Data + AI Summit (San Francisco, USA)*, 2025.
 - [Boosting Clinical Trial Power in Parkinson's disease (PD) with AI-Generated Digital Twins](https://eric-tramel.github.io/publications/boosting-clinical-trial-power-in-parkinsons-diseas-10.md): C Murray & C Kusiak & A Vanderbeek & D Bertolini & E Tramel, *MOVEMENT DISORDERS*, 2024.
 - [Digital twin generators for disease modeling](https://eric-tramel.github.io/publications/digital-twin-generators-for-disease-modeling-08.md): Nameyeh Alam & Jake Basilico & Daniele Bertolini & Satish Casie Chetty & Heather D'Angelo & Ryan Douglas & Charles K Fisher & Franklin Fuller & Melissa Gomes & Rishabh Gupta & Alex Lang & Anton Loukianov & Rachel Mak-McCully & Cary Murray & Hanalei Pham & Susanna Qiao & Elena Ryapolova-Webb & Aaron Smith & Dimitri Theoharatos & Anil Tolwani & Eric W Tramel & Anna Vidovszky & Judy Viduya & Jonathan R Walsh, *arXiv preprint arXiv:2405.01488*, 2024.
